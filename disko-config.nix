@@ -34,7 +34,7 @@
                   "/nix" = {
                     mountOptions = ["compress=zstd" "noatime"];
                     mountpoint = "/nix";
-                  }
+                  };
                   "/swap" = {
                     mountpoint = "/.swapvol";
                     swap = {

@@ -39,9 +39,11 @@
     neovim
     btop
     fastfetch
+    unzip
   ];
 
   environment.defaultPackages = [ ];
+  programs.nano.enable = false;
   nix.settings.experimental-features = "nix-command flakes";
 
   services.openssh = {
@@ -51,6 +53,13 @@
       PasswordAuthentication = false;
     };
   };
+
+  services.pipewire = {
+    enable = true;
+    wireplumber.enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  }
 
   system.stateVersion = "24.11";
 }

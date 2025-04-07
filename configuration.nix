@@ -38,9 +38,9 @@
     git
     neovim
     btop
+    fastfetch
   ];
 
-  users.mutableUsers = false;
   environment.defaultPackages = [ ];
   nix.settings.experimental-features = "nix-command flakes";
 

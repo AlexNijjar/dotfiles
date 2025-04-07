@@ -3,7 +3,12 @@
 {
   imports = [
     ./hardware-configuration.nix
-    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+    "${
+      builtins.fetchTarball {
+        url = "https://github.com/nix-community/disko/archive/master.tar.gz";
+        sha256 = "sha256:01ir7h41rph2b3ix2p6qyjr8d5yz2wq3akp2v87ddjjnh4v3n8an";
+      }
+    }/module.nix"
     ./disko-config.nix
   ];
 

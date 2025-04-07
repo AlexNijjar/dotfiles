@@ -10,9 +10,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "alex-nixos";
+  networking.hostName = "nixos";
   networking.wireless.enable = true;
   networking.wireless.networks = {
+    Serenity = {
+      psk = "";
+    };
   };
 
   time.timeZone = "America/Los_Angeles";
@@ -27,6 +30,10 @@
     git
     neovim
   ];
+
+  users.mutableUsers = false;
+  environment.defaultPackages = [ ];
+  nix.settings.experimental-features = "nix-command flakes";
 
   services.openssh.enable = true;
   system.stateVersion = "24.11";

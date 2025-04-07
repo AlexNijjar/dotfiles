@@ -34,6 +34,10 @@
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdZWguoU6C7AIsM4+DDVx5RnjCdZ6xY0yhgkMZyAOBT alexander.nijjar@icloud.com"
       ];
+      packages = with pkgs; [
+        nushell,
+        hyprland,
+      ];
     };
     users.root.shell = pkgs.nushell;
     defaultUserShell = pkgs.nushell;
@@ -68,7 +72,6 @@
 
   programs = {
     starship.enable = true;
-    nushell.enable = true;
   };
 
   system.stateVersion = "24.11";

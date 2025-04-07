@@ -59,7 +59,7 @@
     wireplumber.enable = true;
     alsa.enable = true;
     pulse.enable = true;
-  }
+  };
 
   system.stateVersion = "24.11";
 }

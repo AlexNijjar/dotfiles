@@ -24,17 +24,28 @@
   users.users.alex = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdZWguoU6C7AIsM4+DDVx5RnjCdZ6xY0yhgkMZyAOBT alexander.nijjar@icloud.com"
+    ];
   };
 
   environment.systemPackages = with pkgs; [
     git
     neovim
+    btop
   ];
 
   users.mutableUsers = false;
   environment.defaultPackages = [ ];
   nix.settings.experimental-features = "nix-command flakes";
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
+  };
+
   system.stateVersion = "24.11";
 }

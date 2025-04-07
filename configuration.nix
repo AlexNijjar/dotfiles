@@ -26,12 +26,16 @@
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users.alex = {
+  users {
+    users.alex = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.nushell;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdZWguoU6C7AIsM4+DDVx5RnjCdZ6xY0yhgkMZyAOBT alexander.nijjar@icloud.com"
     ];
+    users.root.shell = pkgs.nushell;
+    defaultUserShell = pkgs.nushell;
   };
 
   environment.systemPackages = with pkgs; [
@@ -59,6 +63,11 @@
     wireplumber.enable = true;
     alsa.enable = true;
     pulse.enable = true;
+  };
+
+  programs = {
+    starship.enable = true;
+    nushell.enable = true;
   };
 
   system.stateVersion = "24.11";

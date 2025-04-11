@@ -15,12 +15,24 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
-  networking.wireless.enable = true;
-  networking.wireless.networks = {
-    Serenity = {
-      psk = "";
+  networking = {
+    hostName = "nixos";
+    wireless = {
+      enable = true;
+      Serenity = {
+        psk = "";
+      };
     };
+    interfaces.wlp11s0 = {
+      useDHCP = false;
+      wakeOnLan.enable = true;
+      ipv4.addresses = [{
+        address = "10.0.4.2";
+        prefixLength = 24;
+      }];
+    };
+    defaultGateway = "10.0.4.1";
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
   };
 
   time.timeZone = "America/Los_Angeles";
@@ -36,7 +48,6 @@
       ];
       packages = with pkgs; [
         nushell
-        hyprland
       ];
     };
     users.root.shell = pkgs.nushell;
@@ -49,6 +60,7 @@
     btop
     fastfetch
     unzip
+    tree
   ];
 
   environment.defaultPackages = [ ];

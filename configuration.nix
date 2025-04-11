@@ -19,7 +19,7 @@
     hostName = "nixos";
     wireless = {
       enable = true;
-      Serenity = {
+      networks.Serenity = {
         psk = "";
       };
     };

@@ -35,6 +35,16 @@
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
   };
 
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+        if (action.id == "org.freedesktop.login1.suspend" ||
+            action.id == "org.freedesktop.login1.power-off" ||
+            action.id == "org.freedesktop.login1.reboot") {
+          return polkit.Result.YES;
+        }
+      });
+  '';
+
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
 

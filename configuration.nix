@@ -45,13 +45,18 @@
       });
   '';
 
+  services.logind.extraConfig = ''
+    HandlePowerKey = "suspend"
+    HandlePowerKeyLongPress = "poweroff"
+  '';
+
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
 
   users = {
     users.alex = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "power" ];
       shell = pkgs.nushell;
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdZWguoU6C7AIsM4+DDVx5RnjCdZ6xY0yhgkMZyAOBT alexander.nijjar@icloud.com"

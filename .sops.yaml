@@ -1,7 +1,7 @@
 keys:
-  - &alex age1gp2zar3zza0nx74qzp5lsrmhwlhs26sv042j9tep3sse4ce22qts2w7cej
+  - &host age1qy3zvm93fl6z38ukr8t3v7ug6vd9dq0qpv9j6sw9fcjmyv8y8c9qkn4cle
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:
     - age:
-      - *alex
+      - *host

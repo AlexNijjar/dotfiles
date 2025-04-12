@@ -79,6 +79,13 @@
   ];
 
   environment.defaultPackages = [ ];
+
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+    };
+  };
+
   programs.nano.enable = false;
   nix.settings.experimental-features = "nix-command flakes";
 

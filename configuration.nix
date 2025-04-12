@@ -2,6 +2,7 @@
 
 {
   imports = [
+    <sops-nix/modules/sops>
     ./hardware-configuration.nix
     "${
       builtins.fetchTarball {
@@ -15,13 +16,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.sshKeyPaths = [ "/home/alex/.ssh/alex-arch" ];
+    secrets.wpa_supplicant = {};
+  };
+
   networking = {
     hostName = "nixos";
     wireless = {
       enable = true;
-      networks.Serenity = {
-        psk = "";
-      };
+      secretsFile = config.sops.secrets.wpa_supplicant.path;
+      networks.Serenity.pskRaw = "ext:serenity_psk";
     };
     interfaces.wlp11s0 = {
       useDHCP = false;

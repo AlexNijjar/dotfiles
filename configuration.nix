@@ -2,7 +2,6 @@
 
 {
   imports = [
-    <sops-nix/modules/sops>
     ./hardware-configuration.nix
     "${
       builtins.fetchTarball {

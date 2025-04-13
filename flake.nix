@@ -22,10 +22,11 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.alex = { 
               imports = [
                 ./home/home.nix
-                catppuccin.homeManagerModules.catppuccin
+                catppuccin.homeModules.catppuccin
               ];
             };
         }

@@ -5,7 +5,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   sops = {
-    defaultSopsFile = ./secrets.yaml;
+    defaultSopsFile = ../secrets.yaml;
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       generateKey = true;

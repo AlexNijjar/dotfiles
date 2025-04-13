@@ -22,7 +22,12 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.alex = ./home/home.nix;
+            home-manager.users.alex = { 
+              imports = [
+                ./home/home.nix
+                catppuccin.homeManagerModules.catppuccin
+              ];
+            };
         }
         sops-nix.nixosModules.sops
         catppuccin.nixosModules.catppuccin

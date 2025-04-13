@@ -4,9 +4,7 @@
   programs.librewolf = {
     enable = true;
     policies = {
-      BlockAboutConfig = true;
       DefaultDownloadDirectory = "/home/alex/Downloads";
-      DisablePocket = true;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
       OfferToSaveLoginsDefault = false;
@@ -47,6 +45,14 @@
         "browser.search.suggest.enabled" = true;
         "browser.urlbar.suggest.searches" = true;
         "browser.toolbars.bookmarks.visibility" = "always";
+        "browser.search.separatePrivateDefault" = false;
+        "extensions.autoDisableScopes" = 0;
+        "ui.systemUsesDarkTheme" = true;
+        "devtools.everOpened" = true;
+        "app.update.auto" = false;
+        "extensions.pocket.enabled" = false;
+        "extensions.pocket.showHome" = false;
+        "extensions.allowPrivateBrowsingByDefault" = true;
       };
     };
   };

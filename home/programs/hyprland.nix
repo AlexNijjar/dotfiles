@@ -11,13 +11,12 @@
 
       imports = [
         ./hyprland/binds.nix
+        ./hyprland/env.nix
+        ./hyprland/window-rules.nix
+        ./hyprland/general.nix
+        ./hyprland/decoration.nix
+        ./hyprland/animations.nix
       ];
-
-      env = ./hyprland/env.nix;
-      windowrule = ./hyprland/window-rules.nix;
-      general = ./hyprland/general.nix;
-      decoration = ./hyprland/decoration.nix;
-      animations = ./hyprland/animations.nix;
 
       monitor = [", highres, auto, $scale"];
 

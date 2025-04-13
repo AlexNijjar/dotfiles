@@ -14,7 +14,7 @@
     walker.url = "github:abenz1267/walker";
   };
   
-  outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin }: {
+  outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin, walker }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

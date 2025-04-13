@@ -11,6 +11,7 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
+    walker.url = "github:abenz1267/walker"
   };
   
   outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin }: {
@@ -37,6 +38,7 @@
         ./nixos/disko-config.nix
         ./nixos/environment.nix
         ./nixos/hardware-configuration.nix
+        ./nixos/hyprland.nix
         ./nixos/networking.nix
         ./nixos/programs.nix
         ./nixos/services.nix

@@ -8,7 +8,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
   
-  outputs = { self, nixpkgs, sops-nix }: {
+  outputs = { self, nixpkgs, disko, sops-nix }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

@@ -17,9 +17,10 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
   
-  outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin }: {
+  outputs = inputs: with inputs; {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager

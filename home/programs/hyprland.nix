@@ -45,9 +45,9 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
-        "XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        "xf86audioraisevolume, exec, swayosd-client --output-volume raise"
-        "xf86audiolowervolume, exec, swayosd-client --output-volume lower"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
       ] ++ (
         builtins.concatLists (builtins.genList (i:
           let ws = i + 1;

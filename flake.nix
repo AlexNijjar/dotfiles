@@ -18,12 +18,6 @@
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
-        home-manager.nixosModules.home-manager
-        {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.alex = ./home/home.nix;
-        }
         sops-nix.nixosModules.sops
         catppuccin.nixosModules.catppuccin
         ./nixos/boot.nix
@@ -35,6 +29,7 @@
         ./nixos/programs.nix
         ./nixos/services.nix
         ./nixos/users.nix
+        ./home/home.nix
       ];
     };
   };

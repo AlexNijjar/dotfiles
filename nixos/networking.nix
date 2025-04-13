@@ -18,7 +18,6 @@
         prefixLength = 24;
       }];
     };
-    useDHCP = true;
     defaultGateway = "10.0.4.1";
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
   };

@@ -1,4 +1,13 @@
 {
+  imports = [
+    ./hyprland/animations.nix
+    ./hyprland/binds.nix
+    ./hyprland/decoration.nix
+    ./hyprland/env.nix
+    ./hyprland/general.nix
+    ./hyprland/window-rules.nix
+  ];
+      
   services.hyprpolkitagent.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -8,15 +17,6 @@
       "$sapphire" = "rgb(74c7ec)";
       "$base" = "rgb(1e1e2e)";
       "$scale" = "1.5";
-
-      imports = [
-        ./hyprland/binds.nix
-        ./hyprland/env.nix
-        ./hyprland/window-rules.nix
-        ./hyprland/general.nix
-        ./hyprland/decoration.nix
-        ./hyprland/animations.nix
-      ];
 
       monitor = [", highres, auto, $scale"];
 

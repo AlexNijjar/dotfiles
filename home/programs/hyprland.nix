@@ -10,7 +10,7 @@
         "systemctl --user start hyprpolkitagent"
       ];
 
-      "$scale = 1.5";
+      "$scale" = "1.5";
       monitor = [", highres, auto, $scale"];
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"

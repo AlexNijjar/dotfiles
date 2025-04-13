@@ -38,7 +38,6 @@
         ./nixos/disko-config.nix
         ./nixos/environment.nix
         ./nixos/hardware-configuration.nix
-        ./nixos/hyprland.nix
         ./nixos/networking.nix
         ./nixos/programs.nix
         ./nixos/services.nix

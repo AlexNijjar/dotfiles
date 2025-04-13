@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 
 {
+  gvfs.enable = true;
   services = {
     openssh = {
       enable = true;

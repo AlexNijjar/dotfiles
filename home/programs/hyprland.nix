@@ -3,6 +3,24 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
+      # Catppuccin colors
+      "$mauve" = "rgb(cba6f7)";
+      "$sapphire" = "rgb(74c7ec)";
+      "$base" = "rgb(1e1e2e)";
+      "$scale" = "1.5";
+
+      imports = [
+        ./hyprland/binds.nix
+      ];
+
+      env = ./hyprland/env.nix;
+      windowrule = ./hyprland/window-rules.nix;
+      general = ./hyprland/general.nix;
+      decoration = ./hyprland/decoration.nix;
+      animations = ./hyprland/animations.nix;
+
+      monitor = [", highres, auto, $scale"];
+
       exec-once = [
         "hyprpaper"
         "swayosd-server"
@@ -10,73 +28,20 @@
         "systemctl --user start hyprpolkitagent"
       ];
 
-      "$scale" = "1.5";
-      monitor = [", highres, auto, $scale"];
-      env = [
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
+      misc = { 
+        font_family = "JetBrainsMono";
+        middle_click_paste = false;
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
 
-        "QT_QPA_PLATFORMTHEME,qt5ct"
-        "QT_QPA_PLATFORM,wayland"
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+      };
 
-        "HYPRCURSOR_THEME,Adwaita"
-        "HYPRCURSOR_SIZE,24"
-
-        "XCURSOR_SIZE,24"
-        "GDK_SCALE,$scale"
-      ];
-
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, Q, killactive"
-        "$mod, DELETE, exit"
-        "$mod, V, togglefloating"
-        "$mod, F, fullscreen"
-        "$mod, P, pin"
-
-        "$mod, F1, exec, walker"
-        "$mod, F2, exec, ghostty"
-        "$mod, F3, exec, librewolf"
-        "$mod, F4, exec, thunar"
-
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-
-        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-      ] ++ (
-        builtins.concatLists (builtins.genList (i:
-          let ws = i + 1;
-          in [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ]
-        )
-        9)
-      );
-
-      bindl = [
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
-        ", mouse:275, workspace, +1"
-        ", mouse:276, workspace, -1"
-      ];
-
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-      ];
-
-      bindel = [
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ];
-    };
+      input = {
+        kb_layout = "us";
+      };
   };
 }

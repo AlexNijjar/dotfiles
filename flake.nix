@@ -22,7 +22,7 @@
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.alex = ./home.nix;
+            home-manager.users.alex = ./home/home.nix;
         }
         ./nixos/boot.nix
         ./nixos/configuration.nix

@@ -17,7 +17,7 @@
   };
 
   programs = {
-    btop.enable = true
+    btop.enable = true;
     fastfetch.enable = true;
     librewolf.enable = true;
     ghostty.enable = true;

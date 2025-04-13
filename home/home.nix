@@ -4,7 +4,6 @@
   imports = [
     ./programs/hyprland.nix
     ./programs/nushell.nix
-    ./programs/walker.nix
   ];
 
   home = {
@@ -13,6 +12,7 @@
       krabby
       unzip
       vesktop
+      walker
     ];
   };
 

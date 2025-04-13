@@ -129,7 +129,6 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",
         "sops-nix": "sops-nix",
-        "walker": "walker"
       }
     },
     "sops-nix": {
@@ -162,25 +161,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
-        "type": "github"
-      }
-    },
-    "walker": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_4",
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1744044972,
-        "narHash": "sha256-17L0FA2S3+237RN2o/gKnIyBmfoChVxyrGiYPAovpSU=",
-        "owner": "abenz1267",
-        "repo": "walker",
-        "rev": "b2b47b27ac64b1a9820216520ad61c3989d27c87",
-        "type": "github"
-      },
-      "original": {
-        "owner": "abenz1267",
-        "repo": "walker",
         "type": "github"
       }
     }

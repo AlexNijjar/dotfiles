@@ -11,7 +11,6 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
-    walker.url = "github:abenz1267/walker";
   };
   
   outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin }: {

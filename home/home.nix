@@ -2,8 +2,10 @@
 
 {
   imports = [
+    ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
+    ./programs/librewolf.nix
     ./programs/nushell.nix
     ./programs/ssh.nix
   ];
@@ -21,8 +23,6 @@
   programs = {
     btop.enable = true;
     fastfetch.enable = true;
-    librewolf.enable = true;
-    ghostty.enable = true;
   };
 
   services = {

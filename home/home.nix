@@ -2,8 +2,10 @@
 
 {
   imports = [
+    ./programs/git.nix
     ./programs/hyprland.nix
     ./programs/nushell.nix
+    ./programs/ssh.nix
   ];
 
   home = {

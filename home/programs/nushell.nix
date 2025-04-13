@@ -3,7 +3,7 @@
     enable = true;
 
     shellAliases = {
-      switch = "sudo nixos-rebuild switch --flake ~/dotfiles"
+      switch = "sudo nixos-rebuild switch --flake ~/dotfiles";
     };
 
     settings = {
@@ -12,10 +12,10 @@
         enable = true;
         max_results = 200;
       };
-    }
+    };
 
     environmentVariables = {
-    }
+    };
 
     extraConfig = ''
       krabby random

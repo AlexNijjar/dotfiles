@@ -12,7 +12,7 @@
       btop
       fastfetch
       unzip
-    ]
+    ];
   };
 
   catppuccin = {

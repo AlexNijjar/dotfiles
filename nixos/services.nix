@@ -20,7 +20,7 @@
     greetd = {
       enable = true;
       settings.default_session = {
-        command = "${lib.exe pkgs.greetd.tuigreet} --cmd Hyprland --remember --time --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red";
+        command = "${lib.getExe pkgs.greetd.tuigreet} --cmd Hyprland --remember --time --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red";
         user = "greeter";
       };
     };

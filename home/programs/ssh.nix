@@ -15,7 +15,7 @@
       };
       tinybox = {
         hostname = "10.0.4.17";
-        identityFile = "~/.ssh/alex-arch";
+        identityFile = "~/.ssh/AWS_MASHUP";
         user = "alex";
       };
       alex = {

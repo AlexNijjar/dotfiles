@@ -9,21 +9,23 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
   };
   
-  outputs = { self, nixpkgs, disko, sops-nix, home-manager }: {
+  outputs = { self, nixpkgs, disko, home-manager, sops-nix, catppuccin }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         disko.nixosModules.disko
-        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
         {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.alex = ./home/home.nix;
         }
+        sops-nix.nixosModules.sops
+        catppuccin.nixosModules.catppuccin
         ./nixos/boot.nix
         ./nixos/configuration.nix
         ./nixos/disko-config.nix

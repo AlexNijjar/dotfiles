@@ -3,12 +3,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      nushell
-      git
-      neovim
-      btop
-      fastfetch
-      unzip
       tree
     ];
 

@@ -19,6 +19,6 @@
 
     extraConfig = ''
       krabby random
-    ''
+    '';
   };
 }

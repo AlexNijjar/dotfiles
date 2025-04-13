@@ -12,5 +12,10 @@
     };
   };
 
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    twemoji-color-font
+  ];
+
   system.stateVersion = "24.11";
 }

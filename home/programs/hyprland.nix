@@ -43,5 +43,6 @@
       input = {
         kb_layout = "us";
       };
+    };
   };
 }

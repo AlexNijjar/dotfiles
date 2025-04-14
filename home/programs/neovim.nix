@@ -21,6 +21,11 @@
       vim.opt.cursorline = true
       vim.opt.ttyfast = true
       vim.opt.clipboard = "unnamed,unnamedplus"
+
+      vim.cmd([[
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+      ]])
     '';
     plugins = with pkgs.vimPlugins; [
       catppuccin-nvim
@@ -31,7 +36,9 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       telescope-nvim
+      vim-commentary
       vim-nix
+      vim-wakatime
       which-key-nvim
     ];
   };

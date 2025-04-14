@@ -5,6 +5,7 @@
 
   networking = {
     hostName = "nixos";
+    useDHCP = false;
     wireless = {
       enable = true;
       secretsFile = config.sops.secrets.wpa_supplicant.path;

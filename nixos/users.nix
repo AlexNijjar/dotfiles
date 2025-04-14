@@ -13,4 +13,9 @@
     users.root.shell = pkgs.nushell;
     defaultUserShell = pkgs.nushell;
   };
+
+  security.sudo.extraConfig = ''
+    Defaults timestamp_timeout=60
+    Defaults timestamp_type=global
+  '';
 }

@@ -26,8 +26,11 @@
       tree-sitter
       gcc
       nodejs_20
+      pnpm
       uv
       ruff
+      jetbrains.idea-ultimate
+      jetbrains.pycharm-professional
     ];
 
     pointerCursor = {

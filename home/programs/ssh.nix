@@ -3,12 +3,12 @@
     enable = true;
     addKeysToAgent = "yes";
     matchBlocks = {
-      github = {
+      "github.com" = {
         hostname = "github.com";
         identityFile = "~/.ssh/alex-arch";
         user = "git";
       };
-      hf = {
+      "hf.co" = {
         hostname = "hf.co";
         identityFile = "~/.ssh/alex-arch";
         user = "git";

@@ -65,6 +65,7 @@
     fastfetch.enable = true;
     obs-studio.enable = true;
     ripgrep.enable = true;
+    fd.enable = true;
   };
 
   services = {

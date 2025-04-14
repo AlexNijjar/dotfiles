@@ -12,16 +12,16 @@
     variables = {
       EDITOR = "nvim";
       TERMINAL = "ghostty";
-
-      XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_DESKTOP = "Hyprland";
-      XDG_SESSION_TYPE = "wayland";
-
-      XCURSOR_SIZE = 24;
     };
 
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
+
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      
+      XCURSOR_SIZE = 24;
     };
   };
 }

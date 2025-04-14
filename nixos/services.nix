@@ -26,7 +26,7 @@
       };
     };
 
-    services.udev.packages = with pkgs; [
+    udev.packages = with pkgs; [
       via
     ];
   };

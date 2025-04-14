@@ -25,5 +25,9 @@
         user = "greeter";
       };
     };
+
+    services.udev.packages = with pkgs; [
+      via
+    ];
   };
 }

@@ -7,6 +7,7 @@
     ./programs/hyprland.nix
     ./programs/librewolf.nix
     ./programs/nushell.nix
+    ./programs/spicetify.nix
     ./programs/ssh.nix
     ./programs/vesktop.nix
   ];
@@ -16,7 +17,6 @@
     packages = with pkgs; [
       krabby
       lutris
-      spotify
       stremio
       via
       walker

@@ -24,7 +24,7 @@
       modules = [
         {
           nixpkgs = {
-            config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+            config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
              "steam"
             ];
             overlays = [

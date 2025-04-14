@@ -28,6 +28,7 @@
              "steam"
              "steam-unwrapped"
              "spotify"
+             "stremio-shell"
             ];
             overlays = [
               nur.overlays.default

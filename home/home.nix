@@ -8,6 +8,7 @@
     ./programs/librewolf.nix
     ./programs/nushell.nix
     ./programs/ssh.nix
+    ./programs/vesktop.nix
   ];
 
   home = {
@@ -17,7 +18,6 @@
       lutris
       spotify
       stremio
-      vesktop
       via
       walker
     ];

@@ -23,9 +23,14 @@
       specialArgs = { inherit inputs; };
       modules = [
         {
-          nixpkgs.overlays = [
-            nur.overlays.default
-          ];
+          nixpkgs = {
+            config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "steam"
+            ];
+            overlays = [
+              nur.overlays.default
+            ];
+          };
         }
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager

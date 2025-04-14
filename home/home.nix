@@ -31,24 +31,24 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
+  };
 
-    gtk = {
-      enable = true;
+  gtk = {
+    enable = true;
 
-      theme = {
-        package = pkgs.flat-remix-gtk;
-        name = "Flat-Remix-GTK-Grey-Darkest";
-      };
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
 
-      iconTheme = {
-        package = pkgs.adwaita-icon-theme;
-        name = "Adwaita";
-      };
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
 
-      font = {
-        name = "JetBrainsMono";
-        size = 12;
-      };
+    font = {
+      name = "JetBrainsMono";
+      size = 12;
     };
   };
 

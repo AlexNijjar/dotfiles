@@ -3,7 +3,6 @@
     ./hyprland/animations.nix
     ./hyprland/binds.nix
     ./hyprland/decoration.nix
-    ./hyprland/env.nix
     ./hyprland/general.nix
     ./hyprland/window-rules.nix
   ];
@@ -21,11 +20,21 @@
       monitor = [", highres, auto, $scale"];
 
       exec-once = [
+        "[workspace 1 silent] spotify & vesktop"
         "hyprpaper"
         "swayosd-server"
         "walker --gapplication-service"
         "systemctl --user start hyprpolkitagent"
       ];
+
+      env = [
+        "GDK_SCALE,$scale"
+      ];
+
+      xwayland = {
+        force_zero_scaling = true;
+        use_nearest_neighbor = true;
+      };
 
       misc = { 
         font_family = "JetBrainsMono";

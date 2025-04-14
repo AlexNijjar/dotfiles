@@ -36,7 +36,7 @@
 
     theme = {
       package = pkgs.catppuccin-gtk;
-      name = "Catppuccin-Mocha-Mauve";
+      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
     };
 
     iconTheme = {

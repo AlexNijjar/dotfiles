@@ -21,6 +21,12 @@
       stremio
       via
       walker
+      nil
+      tree-sitter
+      gcc
+      nodejs_20
+      uv
+      ruff
     ];
 
     pointerCursor = {
@@ -58,6 +64,7 @@
     btop.enable = true;
     fastfetch.enable = true;
     obs-studio.enable = true;
+    ripgrep.enable = true;
   };
 
   services = {

@@ -5,7 +5,6 @@
     systemPackages = with pkgs; [
       tree
       unzip
-      nil
     ];
 
     defaultPackages = [];

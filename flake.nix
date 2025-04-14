@@ -39,6 +39,8 @@
              "spotify"
              "stremio-shell"
              "stremio-server"
+             "idea-ultimate"
+             "pycharm-professional"
             ];
             overlays = [
               nur.overlays.default

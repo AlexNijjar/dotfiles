@@ -21,10 +21,9 @@
       vim.opt.cursorline = true
       vim.opt.ttyfast = true
       vim.opt.clipboard = "unnamed,unnamedplus"
-
       vim.cmd([[
-        autocmd StdinReadPre * let s:std_in=1
-        autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+        autocmd VimEnter * NERDTree | wincmd p
+        autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
       ]])
     '';
     plugins = with pkgs.vimPlugins; [

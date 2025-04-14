@@ -33,6 +33,7 @@
         {
           nixpkgs = {
             config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+             "copilot.vim"
              "steam"
              "steam-unwrapped"
              "spotify"

@@ -20,7 +20,10 @@
       vim.opt.wildmode = {'longest', 'list'}
       vim.opt.cursorline = true
       vim.opt.ttyfast = true
-      vim.opt.clipboard = "unnamed,unnamedplus"
+      vim.opt.clipboard = "unnamedplus"
+
+      vim.keymap.set('v', '<C-c>', '"+y', {noremap = true})
+
       vim.cmd([[
         autocmd VimEnter * NERDTree | wincmd p
         autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

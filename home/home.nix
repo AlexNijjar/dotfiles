@@ -35,8 +35,8 @@
     enable = true;
 
     theme = {
-      package = pkgs.catppuccin-gtk;
-      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
     };
 
     iconTheme = {
@@ -51,12 +51,6 @@
       name = "JetBrainsMono";
       size = 12;
     };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
   };
 
   programs = {

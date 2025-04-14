@@ -17,7 +17,7 @@
       "$base" = "rgb(1e1e2e)";
       "$scale" = "1.5";
 
-      monitor = [", highres, auto, 1"];
+      monitor = [", highres, auto, $scale"];
 
       exec-once = [
         "[workspace 1 silent] spotify & vesktop"
@@ -28,9 +28,7 @@
       ];
 
       env = [
-        "GDK_SCALE,1"
-        "GDK_DPI_SCALE,$scale"
-        "QT_SCALE_FACTOR,$scale"
+        "GDK_SCALE,$scale"
       ];
 
       xwayland = {

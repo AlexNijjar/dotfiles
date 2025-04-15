@@ -28,6 +28,12 @@
       };
     };
 
+    logind = {
+      extraConfig = ''
+        HandlePowerKey=suspend
+      '';
+    };
+
     udev.packages = with pkgs; [
       via
     ];

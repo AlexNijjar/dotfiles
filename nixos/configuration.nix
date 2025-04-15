@@ -14,6 +14,13 @@
     };
   };
 
+  # Disable all devices waking up my computer
+  powerManagement.powerDownCommands = ''
+    for device in $(grep enabled /proc/acpi/wakeup | cut -f1); do
+      echo $device > /proc/acpi/wakeup
+    done
+  '';
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     twemoji-color-font

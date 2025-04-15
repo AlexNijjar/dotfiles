@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   sops.secrets.wpa_supplicant = { };
@@ -21,5 +21,16 @@
     };
     defaultGateway = "10.0.4.1";
     nameservers = [ "1.1.1.1" "8.8.8.8" ];
+  };
+
+  systemd.services.enable-wowlan = {
+    description = "Enable Wake-on-WLAN";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.iw}/bin/iw phy phy0 wowlan enable magic-packet";
+      RemainAfterExit = true;
+    };
   };
 }

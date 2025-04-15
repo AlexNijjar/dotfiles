@@ -29,6 +29,7 @@
       ffmpegthumbnailer
       grim
       slurp
+      xarchiver
       gcc
       cargo
       nodejs_20

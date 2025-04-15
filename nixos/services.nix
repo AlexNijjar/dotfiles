@@ -3,7 +3,8 @@
 {
   services = {
     gvfs.enable = true;
-    playerctld.enable = true;
+    tumbler.enable = true;
+      playerctld.enable = true;
     openssh = {
       enable = true;
       settings = {

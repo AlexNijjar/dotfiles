@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./interface.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
@@ -40,28 +41,6 @@
     };
   };
 
-  gtk = {
-    enable = true;
-
-    theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
-
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "mauve";
-      };
-    };
-
-    font = {
-      name = "JetBrainsMono";
-      size = 12;
-    };
-  };
-
   programs = {
     btop.enable = true;
     fastfetch.enable = true;
@@ -73,11 +52,5 @@
   services = {
     swayosd.enable = true;
     hyprpaper.enable = true;
-  };
-
-  catppuccin = {
-    enable = true;
-    accent = "mauve";
-    flavor = "mocha";
   };
 }

@@ -38,7 +38,7 @@
       };
 
       misc = {
-        font_family = "JetBrainsMono";
+        font_family = "JetBrainsMono Nerd Font";
         middle_click_paste = false;
         force_default_wallpaper = 0;
         disable_hyprland_logo = true;

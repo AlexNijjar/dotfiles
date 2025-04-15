@@ -54,6 +54,7 @@
       vim.g.NERDTreeMinimalUI = 1
 
       vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
+      vim.keymap.set('n', '<leader>t', ':botright 20split term://$SHELL<CR>i', {noremap = true})
 
       vim.cmd([[
         autocmd VimEnter * NERDTree | wincmd p
@@ -139,6 +140,12 @@
               { name = "buffer" },
           }),
       })
+
+      require("auto-save").setup({
+        enabled = true,
+      })
+
+      require 'colorizer'.setup()
       
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -154,8 +161,13 @@
       local neogit = require("neogit")
       vim.keymap.set("n", "<leader>gs", function() neogit.open() end, { desc = "Neogit status" })
       vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, { desc = "Neogit commit" })
+      vim.keymap.set("n", "<leader>gp", function() neogit.open({ "push" }) end, { desc = "Neogit push" })
+      vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { desc = "Neogit fetch" })
+      vim.keymap.set("n", "<leader>gl", function() neogit.open({ "pull" }) end, { desc = "Neogit pull" })
     '';
+
     plugins = with pkgs.vimPlugins; [
+      auto-save-nvim
       catppuccin-nvim
       cmp-nvim-lsp
       cmp-buffer
@@ -167,6 +179,7 @@
       neogit
       nvim-cmp
       nvim-lspconfig
+      nvim-notify
       nvim-treesitter.withAllGrammars
       telescope-nvim
       vim-commentary

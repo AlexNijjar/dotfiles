@@ -12,6 +12,8 @@
     "opacity 0.9,class:^(modrinth-app)$"
     "opacity 0.9,title:^(Lutris)$"
 
+    "float,class:^(imv)$"
+
     "float,title:^(Picture-in-Picture)$"
     "pin,title:^(Picture-in-Picture)$"
 

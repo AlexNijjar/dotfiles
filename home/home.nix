@@ -23,6 +23,8 @@
       via
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
+      imv
+      zathura
       walker
       krabby
       wl-clipboard

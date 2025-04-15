@@ -26,6 +26,9 @@
       walker
       krabby
       wl-clipboard
+      ffmpegthumbnailer
+      grim
+      slurp
       gcc
       cargo
       nodejs_20

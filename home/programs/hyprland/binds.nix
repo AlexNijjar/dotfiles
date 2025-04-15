@@ -2,6 +2,8 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind = [
+      "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png')"
+      "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png')"
       "$mod, Q, killactive"
       "$mod, DELETE, exit"
       "$mod, V, togglefloating"

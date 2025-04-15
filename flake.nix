@@ -24,7 +24,7 @@
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
   };
-  
+
   outputs = inputs: with inputs; {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -33,14 +33,14 @@
         {
           nixpkgs = {
             config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-             "copilot.vim"
-             "steam"
-             "steam-unwrapped"
-             "spotify"
-             "stremio-shell"
-             "stremio-server"
-             "idea-ultimate"
-             "pycharm-professional"
+              "copilot.vim"
+              "steam"
+              "steam-unwrapped"
+              "spotify"
+              "stremio-shell"
+              "stremio-server"
+              "idea-ultimate"
+              "pycharm-professional"
             ];
             overlays = [
               nur.overlays.default
@@ -50,18 +50,18 @@
         disko.nixosModules.disko
         home-manager.nixosModules.home-manager
         {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.alex = { 
-              imports = [
-                ./home/home.nix
-                catppuccin.homeModules.catppuccin
-                nixcord.homeManagerModules.nixcord
-                spicetify-nix.homeManagerModules.spicetify
-              ];
-            };
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.users.alex = {
+            imports = [
+              ./home/home.nix
+              catppuccin.homeModules.catppuccin
+              nixcord.homeManagerModules.nixcord
+              spicetify-nix.homeManagerModules.spicetify
+            ];
+          };
         }
         sops-nix.nixosModules.sops
         catppuccin.nixosModules.catppuccin

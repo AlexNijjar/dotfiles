@@ -15,8 +15,7 @@
       };
     };
 
-    environmentVariables = {
-    };
+    environmentVariables = { };
 
     extraConfig = ''
       krabby random

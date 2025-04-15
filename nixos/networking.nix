@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  sops.secrets.wpa_supplicant = {};
+  sops.secrets.wpa_supplicant = { };
 
   networking = {
     hostName = "nixos";

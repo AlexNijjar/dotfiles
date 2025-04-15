@@ -34,7 +34,7 @@
           addonId = "{bbb880ce-43c9-47ae-b746-c3e0096c5b76}";
           url = "https://addons.mozilla.org/firefox/downloads/file/4470306/catppuccin_web_file_icons-1.0.1.xpi";
           sha256 = "7a4b84739675110e9ce2e9cda597521e255a9fc205cfbfdae808549dd04c256c";
-          meta = {};
+          meta = { };
         })
       ];
 

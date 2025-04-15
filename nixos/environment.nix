@@ -7,8 +7,8 @@
       unzip
     ];
 
-    defaultPackages = [];
-    
+    defaultPackages = [ ];
+
     variables = {
       TERMINAL = "ghostty";
     };

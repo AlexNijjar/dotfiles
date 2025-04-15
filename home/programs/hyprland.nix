@@ -6,7 +6,7 @@
     ./hyprland/general.nix
     ./hyprland/window-rules.nix
   ];
-      
+
   services.hyprpolkitagent.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
@@ -17,7 +17,7 @@
       "$base" = "rgb(1e1e2e)";
       "$scale" = "1.5";
 
-      monitor = [", highres, auto, $scale"];
+      monitor = [ ", highres, auto, $scale" ];
 
       exec-once = [
         "[workspace 1 silent] spotify & vesktop"
@@ -37,7 +37,7 @@
         use_nearest_neighbor = true;
       };
 
-      misc = { 
+      misc = {
         font_family = "JetBrainsMono";
         middle_click_paste = false;
         force_default_wallpaper = 0;

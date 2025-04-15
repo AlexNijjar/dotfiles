@@ -145,8 +145,6 @@
         enabled = true,
       })
 
-      require 'colorizer'.setup()
-      
       local builtin = require('telescope.builtin')
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
@@ -171,7 +169,6 @@
       catppuccin-nvim
       cmp-nvim-lsp
       cmp-buffer
-      colorizer
       conform-nvim
       copilot-vim
       lualine-nvim

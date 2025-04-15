@@ -4,7 +4,7 @@
   services = {
     gvfs.enable = true;
     tumbler.enable = true;
-      playerctld.enable = true;
+    playerctld.enable = true;
     openssh = {
       enable = true;
       settings = {

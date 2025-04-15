@@ -15,7 +15,7 @@
   };
 
   fonts.packages = with pkgs; [
-    pkgs.nerd-fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
     twemoji-color-font
   ];
 

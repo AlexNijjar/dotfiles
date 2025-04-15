@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
 {
+  home.pointerCursor = {
+    gtk.enable = true;
+    hyprcursor.enable = true;
+    size = 24;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+  };
+
   gtk = {
     enable = true;
 

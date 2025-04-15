@@ -10,6 +10,7 @@
     ./programs/neovim.nix
     ./programs/nushell.nix
     ./programs/spicetify.nix
+    ./programs/starship.nix
     ./programs/ssh.nix
     ./programs/vesktop.nix
   ];
@@ -31,14 +32,6 @@
       pnpm
       uv
     ];
-
-    pointerCursor = {
-      gtk.enable = true;
-      hyprcursor.enable = true;
-      size = 24;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-    };
   };
 
   programs = {

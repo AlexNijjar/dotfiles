@@ -16,21 +16,19 @@
   home = {
     stateVersion = "24.11";
     packages = with pkgs; [
-      wl-clipboard
-      krabby
       lutris
       stremio
       via
+      jetbrains.idea-ultimate
+      jetbrains.pycharm-professional
       walker
-      nil
-      tree-sitter
+      krabby
+      wl-clipboard
       gcc
+      cargo
       nodejs_20
       pnpm
       uv
-      ruff
-      jetbrains.idea-ultimate
-      jetbrains.pycharm-professional
     ];
 
     pointerCursor = {

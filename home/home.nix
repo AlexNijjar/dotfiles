@@ -13,6 +13,7 @@
     ./programs/starship.nix
     ./programs/ssh.nix
     ./programs/vesktop.nix
+    ./programs/yazi.nix
   ];
 
   home = {

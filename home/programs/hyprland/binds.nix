@@ -12,7 +12,8 @@
       "$mod, F1, exec, walker"
       "$mod, F2, exec, ghostty"
       "$mod, F3, exec, librewolf"
-      "$mod, F4, exec, thunar"
+      "$mod, F4, exec, ghostty -e yazi"
+      "$mod, F5, exec, thunar"
       "$mod, left, movefocus, l"
       "$mod, right, movefocus, r"
       "$mod, up, movefocus, u"
@@ -46,3 +47,4 @@
     ];
   };
 }
+

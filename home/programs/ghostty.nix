@@ -6,6 +6,8 @@
       theme = "catppuccin-mocha";
       font-size = 13;
       background-opacity = 0.9;
+      clipboard-paste-protection = false;
+      confirm-close-surface = false;
       keybind = [
         "performable:ctrl+c=copy_to_clipboard"
         "ctrl+v=paste_from_clipboard"

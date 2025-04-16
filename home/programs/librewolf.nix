@@ -76,7 +76,7 @@
 
       search = {
         force = true;
-        default = "@google";
+        default = "google";
         engines = {
           nix-packages = {
             name = "Nix Packages";

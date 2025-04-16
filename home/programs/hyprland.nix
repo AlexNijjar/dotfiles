@@ -31,7 +31,6 @@
 
       env = [
         "GDK_SCALE,$scale"
-        "QT_SCALE_FACTOR,$scale"
       ];
 
       xwayland = {

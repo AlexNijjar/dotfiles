@@ -6,7 +6,7 @@
     signing = {
       signByDefault = true;
       format = "ssh";
-      key = "/home/alex/.ssh/alex-arch.pub";
+      key = "~/.ssh/alex-arch.pub";
     };
     ignores = [
       ".idea**"

@@ -3,6 +3,7 @@
     ./hyprland/animations.nix
     ./hyprland/binds.nix
     ./hyprland/decoration.nix
+    ./hyprland/hyprpaper.nix
     ./hyprland/general.nix
     ./hyprland/window-rules.nix
   ];

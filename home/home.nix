@@ -50,6 +50,5 @@
 
   services = {
     swayosd.enable = true;
-    hyprpaper.enable = true;
   };
 }

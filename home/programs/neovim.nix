@@ -40,6 +40,7 @@
       vim.opt.expandtab = true
       vim.opt.shiftwidth = 4
       vim.opt.autoindent = true
+      vim.opt.smartindent = true
       vim.opt.relativenumber = true
       vim.opt.wildmode = { "longest", "list" }
       vim.opt.cursorline = true
@@ -60,7 +61,7 @@
         autocmd VimEnter * NERDTree | wincmd p
         autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
       ]])
-      
+
       require('lualine').setup()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
@@ -141,6 +142,19 @@
           }),
       })
 
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      cmp.event:on(
+        "confirm_done",
+        cmp_autopairs.on_confirm_done()
+      )
+
+      require("nvim-autopairs").setup({
+        check_ts = true,
+        disable_filetype = { "TelescopePrompt" },
+        enable_check_bracket_line = true,
+        map_cr = true,
+      })
+
       require("auto-save").setup({
         enabled = true,
       })
@@ -174,6 +188,7 @@
       lualine-nvim
       nerdtree
       neogit
+      nvim-autopairs
       nvim-cmp
       nvim-lspconfig
       nvim-notify

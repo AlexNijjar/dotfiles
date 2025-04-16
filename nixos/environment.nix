@@ -10,6 +10,7 @@
     defaultPackages = [ ];
 
     variables = {
+      EDITOR = "nvim";
       TERMINAL = "ghostty";
     };
 

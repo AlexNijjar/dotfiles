@@ -38,22 +38,98 @@
         })
       ];
 
-      settings = {
-        "privacy.resistFingerprinting" = false;
-        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
-        "browser.aboutConfig.showWarning" = false;
-        "browser.search.suggest.enabled" = true;
-        "browser.urlbar.suggest.searches" = true;
-        "browser.toolbars.bookmarks.visibility" = "always";
-        "browser.search.separatePrivateDefault" = false;
-        "extensions.autoDisableScopes" = 0;
-        "ui.systemUsesDarkTheme" = true;
-        "devtools.everOpened" = true;
-        "app.update.auto" = false;
-        "extensions.pocket.enabled" = false;
-        "extensions.pocket.showHome" = false;
-        "extensions.allowPrivateBrowsingByDefault" = true;
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "YouTube";
+            url = "https://youtube.com";
+          }
+          {
+            name = "GitHub";
+            url = "https://github.com/AlexNijjar";
+          }
+          {
+            name = "nixos";
+            toolbar = true;
+            bookmarks = [
+              {
+                name = "dotfiles";
+                url = "https://github.com/AlexNijjar/dotfiles";
+              }
+              {
+                name = "nixoptions";
+                url = "https://search.nixos.org/options?channel=unstable";
+              }
+              {
+                name = "nixpkgs";
+                url = "https://search.nixos.org/packages?channel=unstable";
+              }
+              {
+                name = "hm-options";
+                url = "https://rycee.gitlab.io/home-manager/options.xhtml";
+              }
+            ];
+          }
+        ];
       };
+
+      search = {
+        force = true;
+        default = " google ";
+        engines = {
+          nix-packages = {
+            name = "
+                  Nix
+                  Packages ";
+            urls = [{
+              template = " https://search.nixos.org/packages ";
+              params = [
+                {
+                  name = "
+                  type ";
+                  value = "
+                  packages ";
+                }
+                {
+                  name = "
+                  query ";
+                  value = " { searchTerms }";
+                }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+
+          nixos-wiki = {
+            name = "NixOS Wiki";
+            urls = [{ template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; }];
+            iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+            definedAliases = [ "@nw" ];
+          };
+          bing.metaData.hidden = true;
+          wikipedia.metaData.hidden = true;
+        };
+      };
+    };
+
+    settings = {
+      "privacy.resistFingerprinting" = false;
+      "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+      "browser.aboutConfig.showWarning" = false;
+      "browser.search.suggest.enabled" = true;
+      "browser.urlbar.suggest.searches" = true;
+      "browser.toolbars.bookmarks.visibility" = "always";
+      "browser.search.separatePrivateDefault" = false;
+      "extensions.autoDisableScopes" = 0;
+      "ui.systemUsesDarkTheme" = true;
+      "devtools.everOpened" = true;
+      "app.update.auto" = false;
+      "extensions.pocket.enabled" = false;
+      "extensions.pocket.showHome" = false;
+      "extensions.allowPrivateBrowsingByDefault" = true;
     };
   };
 }

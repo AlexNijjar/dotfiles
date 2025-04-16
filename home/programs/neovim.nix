@@ -114,6 +114,9 @@
           { "gd", vim.lsp.buf.definition },
           { "gr", vim.lsp.buf.references },
           { "K", vim.lsp.buf.hover },
+          { "gl", vim.diagnostic.open_float },
+          { "[d", vim.diagnostic.goto_prev },
+          { "]d", vim.diagnostic.goto_next },
           { "<leader>rn", vim.lsp.buf.rename },
           { "<leader>ca", vim.lsp.buf.code_action },
           {

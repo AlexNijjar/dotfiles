@@ -76,25 +76,20 @@
 
       search = {
         force = true;
-        default = " google ";
+        default = "@google";
         engines = {
           nix-packages = {
-            name = "
-                  Nix
-                  Packages ";
+            name = "Nix Packages";
             urls = [{
-              template = " https://search.nixos.org/packages ";
+              template = "https://search.nixos.org/packages";
               params = [
                 {
-                  name = "
-                  type ";
-                  value = "
-                  packages ";
+                  name = "type";
+                  value = "packages";
                 }
                 {
-                  name = "
-                  query ";
-                  value = " { searchTerms }";
+                  name = "query";
+                  value = "{ searchTerms }";
                 }
               ];
             }];

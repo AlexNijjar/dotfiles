@@ -12,8 +12,11 @@
     defaultUserShell = pkgs.nushell;
   };
 
-  security.sudo.extraConfig = ''
-    Defaults timestamp_timeout=60
-    Defaults timestamp_type=global
-  '';
+  security = {
+    sudo.extraConfig = ''
+      Defaults timestamp_timeout=60
+      Defaults timestamp_type=global
+    '';
+    pam.services.greetd.enableGnomeKeyring = true;
+  };
 }

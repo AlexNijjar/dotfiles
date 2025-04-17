@@ -24,8 +24,6 @@
       via
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
-      imv
-      zathura
       walker
       krabby
       wl-clipboard
@@ -45,11 +43,28 @@
     btop.enable = true;
     fastfetch.enable = true;
     obs-studio.enable = true;
+    imv.enable = true;
+    zathura.enable = true;
     ripgrep.enable = true;
     fd.enable = true;
+    bun.enable = true;
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    pay-respects = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 
   services = {
+    mako.enable = true;
+    podman.enable = true;
     swayosd.enable = true;
-  };
-}
+
+  }

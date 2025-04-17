@@ -5,6 +5,8 @@
     gvfs.enable = true;
     tumbler.enable = true;
     playerctld.enable = true;
+    gnome.gnome-keyring.enable = true;
+
     openssh = {
       enable = true;
       settings = {

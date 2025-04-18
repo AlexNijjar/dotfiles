@@ -1,7 +1,19 @@
 { pkgs, ... }:
 
 {
-  nix.settings.experimental-features = "nix-command flakes";
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = "nix-command flakes";
+      substituters = [ "https://walker.cachix.org" ];
+      trusted-public-keys = [ "walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM=" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
 
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";

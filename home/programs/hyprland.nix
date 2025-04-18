@@ -23,10 +23,6 @@
 
       exec-once = [
         "[workspace 1 silent] spotify & vesktop"
-        "hyprpaper"
-        "swayosd-server"
-        "walker --gapplication-service"
-        "systemctl --user start hyprpolkitagent"
       ];
 
       env = [

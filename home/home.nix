@@ -13,6 +13,7 @@
     ./programs/starship.nix
     ./programs/ssh.nix
     ./programs/vesktop.nix
+    ./programs/walker.nix
     ./programs/yazi.nix
   ];
 
@@ -24,7 +25,6 @@
       via
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
-      walker
       krabby
       wl-clipboard
       ffmpegthumbnailer
@@ -34,8 +34,8 @@
       gcc
       cargo
       nodejs_20
-      pnpm
       uv
+      jq
     ];
   };
 
@@ -63,8 +63,11 @@
   };
 
   services = {
-    mako.enable = true;
+    mako = {
+      enable = true;
+      defaultTimeout = 5000;
+    };
     podman.enable = true;
     swayosd.enable = true;
-
-  }
+  };
+}

@@ -21,6 +21,10 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
   };
@@ -32,19 +36,8 @@
       modules = [
         {
           nixpkgs = {
-            config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-              "copilot.vim"
-              "steam"
-              "steam-unwrapped"
-              "spotify"
-              "stremio-shell"
-              "stremio-server"
-              "idea-ultimate"
-              "pycharm-professional"
-            ];
-            overlays = [
-              nur.overlays.default
-            ];
+            overlays = [ nur.overlays.default ];
+            config.allowUnfree = true;
           };
         }
         disko.nixosModules.disko
@@ -54,14 +47,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.alex = {
-            imports = [
-              ./home/home.nix
-              catppuccin.homeModules.catppuccin
-              nixcord.homeManagerModules.nixcord
-              spicetify-nix.homeManagerModules.spicetify
-            ];
-          };
+          home-manager.users.alex.imports = [ ./home/home.nix ];
         }
         sops-nix.nixosModules.sops
         catppuccin.nixosModules.catppuccin

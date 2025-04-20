@@ -5,7 +5,7 @@
     "workspace 1, title:^(vesktop)$"
     "workspace 1, title:^(spotify)$"
 
-    "opacity 0.95,class:^(librewolf)$fullscreen:0"
+    "opacity 0.95,class:^(firefox)$fullscreen:0"
     "opacity 0.9,class:^(spotify)$"
     "opacity 0.9,class:^(thunar)$"
     "opacity 0.95,class:^(vesktop)$fullscreen:0"

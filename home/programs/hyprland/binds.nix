@@ -11,7 +11,7 @@
       "$mod, P, pin"
       "$mod, F1, exec, walker"
       "$mod, F2, exec, ghostty"
-      "$mod, F3, exec, librewolf"
+      "$mod, F3, exec, firefox"
       "$mod, F4, exec, ghostty -e yazi"
       "$mod, F5, exec, thunar"
       "$mod, left, movefocus, l"

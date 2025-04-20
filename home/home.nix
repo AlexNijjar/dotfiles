@@ -6,7 +6,6 @@
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
-    ./programs/librewolf.nix
     ./programs/neovim.nix
     ./programs/nushell.nix
     ./programs/schizofox.nix

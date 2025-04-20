@@ -27,6 +27,7 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
+    schizofox.url = "github:schizofox/schizofox";
   };
 
   outputs = inputs: with inputs; {
@@ -59,6 +60,7 @@
         ./nixos/networking.nix
         ./nixos/programs.nix
         ./nixos/services.nix
+        ./nixos/sunshine.nix
         ./nixos/users.nix
       ];
     };

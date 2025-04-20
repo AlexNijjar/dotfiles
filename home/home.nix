@@ -9,6 +9,7 @@
     ./programs/librewolf.nix
     ./programs/neovim.nix
     ./programs/nushell.nix
+    ./programs/schizofox.nix
     ./programs/spicetify.nix
     ./programs/starship.nix
     ./programs/ssh.nix

@@ -25,6 +25,16 @@
 
     settings = {
       "privacy.resistFingerprinting" = false;
+      sanitizeOnShutdown.sanitize = {
+        downloads = true;
+        formdata = true;
+        history = true;
+      };
+      noSessionRestore = true;
+    };
+
+    security = {
+      sandbox.enable = false;
     };
 
     extensions = {
@@ -49,41 +59,43 @@
         };
     };
 
-    misc.bookmarks = [
-      {
-        Title = "YouTube";
-        URL = "https://www.youtube.com/";
-        Placement = "toolbar";
-      }
-      {
-        Title = "GitHub";
-        URL = "https://github.com/AlexNijjar";
-        Placement = "toolbar";
-      }
-      {
-        Title = "dotfiles";
-        URL = "https://github.com/AlexNijjar/dotfiles";
-        Placement = "toolbar";
-        Folder = "nixos";
-      }
-      {
-        Title = "nixoptions";
-        URL = "https://search.nixos.org/options?channel=unstable";
-        Placement = "toolbar";
-        Folder = "nixos";
-      }
-      {
-        Title = "nixpkgs";
-        URL = "https://search.nixos.org/packages?channel=unstable";
-        Placement = "toolbar";
-        Folder = "nixos";
-      }
-      {
-        Title = "hm-options";
-        URL = "https://rycee.gitlab.io/home-manager/options.xhtml";
-        Placement = "toolbar";
-        Folder = "nixos";
-      }
-    ];
+    misc = {
+      bookmarks = [
+        {
+          Title = "YouTube";
+          URL = "https://www.youtube.com/";
+          Placement = "toolbar";
+        }
+        {
+          Title = "GitHub";
+          URL = "https://github.com/AlexNijjar";
+          Placement = "toolbar";
+        }
+        {
+          Title = "dotfiles";
+          URL = "https://github.com/AlexNijjar/dotfiles";
+          Placement = "toolbar";
+          Folder = "nixos";
+        }
+        {
+          Title = "nixoptions";
+          URL = "https://search.nixos.org/options?channel=unstable";
+          Placement = "toolbar";
+          Folder = "nixos";
+        }
+        {
+          Title = "nixpkgs";
+          URL = "https://search.nixos.org/packages?channel=unstable";
+          Placement = "toolbar";
+          Folder = "nixos";
+        }
+        {
+          Title = "hm-options";
+          URL = "https://rycee.gitlab.io/home-manager/options.xhtml";
+          Placement = "toolbar";
+          Folder = "nixos";
+        }
+      ];
+    };
   };
 }

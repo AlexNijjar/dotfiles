@@ -1,10 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,6 +24,7 @@
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
     schizofox.url = "github:schizofox/schizofox";
+    wallpkgs.url = "github:NotAShelf/wallpkgs";
   };
 
   outputs = inputs: with inputs; {
@@ -37,7 +34,6 @@
       modules = [
         {
           nixpkgs = {
-            overlays = [ nur.overlays.default ];
             config.allowUnfree = true;
           };
         }

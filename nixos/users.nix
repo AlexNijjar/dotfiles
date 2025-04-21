@@ -3,8 +3,12 @@
   pkgs,
   ...
 }: {
-  sops.secrets.user_password = {};
-  sops.secrets.root_password = {};
+  sops.secrets.user_password = {
+    neededForUsers = true;
+  };
+  sops.secrets.root_password = {
+    neededForUsers = true;
+  };
 
   users = {
     users.alex = {

@@ -34,6 +34,8 @@
       nodejs_20
       uv
       jq
+      sops
+      openssl
     ];
   };
 

@@ -15,6 +15,12 @@
       vimAlias = true;
       searchCase = "smart";
 
+      options = {
+        autoindent = true;
+        tabstop = 4;
+        wrap = false;
+      };
+
       assistant.copilot.enable = true;
       telescope.enable = true;
       notify.nvim-notify.enable = true;

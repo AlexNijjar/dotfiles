@@ -1,6 +1,8 @@
 # Alex's Dotfiles
 
-These are my personal dotfiles. It's highly personalized to my specific needs and workflows and not meant to be used by others. However, feel free to browse and use any of the shit in here.
+These are my personal dotfiles. It's highly personalized to my specific needs
+and workflows and not meant to be used by others. However, feel free to browse
+and use any of the shit in here.
 
 ### TODO:
 
@@ -11,4 +13,3 @@ These are my personal dotfiles. It's highly personalized to my specific needs an
 - setup gaming stuff (steam, lutrus, proton etc)
 - fix no wifi when waking up from sleep
 - add a bar
-- make users immutable

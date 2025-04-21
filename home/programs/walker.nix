@@ -1,7 +1,5 @@
-{ inputs, ... }:
-
-{
-  imports = [ inputs.walker.homeManagerModules.default ];
+{inputs, ...}: {
+  imports = [inputs.walker.homeManagerModules.default];
 
   # Modified theme of: https://github.com/maotseantonio/NixOS-Hyprland/blob/main/configs/walker/themes/catppuccin.css
   # TODO: https://github.com/abenz1267/walker/issues/235
@@ -39,8 +37,8 @@
         @define-color base rgb(30, 30, 46);
         @define-color mauve rgb(203, 166, 247);
 
-        #window, #box, #aiScroll, #aiList, #search, #password, #input, 
-        #prompt, #clear, #typeahead, #list, child, scrollbar, slider, 
+        #window, #box, #aiScroll, #aiList, #search, #password, #input,
+        #prompt, #clear, #typeahead, #list, child, scrollbar, slider,
         #item, #text, #label, #bar, #sub, #activationlabel {
           all: unset;
         }

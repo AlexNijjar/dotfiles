@@ -19,7 +19,7 @@
 
       "$scale" = "1.5";
 
-      monitor = [ ", highres, auto, $scale" ];
+      monitor = [", highres, auto, $scale"];
 
       exec-once = [
         "[workspace 1 silent] spotify & vesktop"

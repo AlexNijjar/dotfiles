@@ -1,36 +1,40 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    bind = [
-      "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png')"
-      "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png')"
-      "$mod, Q, killactive"
-      "$mod, DELETE, exit"
-      "$mod, V, togglefloating"
-      "$mod, F, fullscreen"
-      "$mod, P, pin"
-      "$mod, F1, exec, walker"
-      "$mod, F2, exec, ghostty"
-      "$mod, F3, exec, firefox"
-      "$mod, F4, exec, ghostty -e yazi"
-      "$mod, F5, exec, thunar"
-      "$mod, left, movefocus, l"
-      "$mod, right, movefocus, r"
-      "$mod, up, movefocus, u"
-      "$mod, down, movefocus, d"
-      ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-    ] ++ (
-      builtins.concatLists (builtins.genList
-        (i:
-          let ws = i + 1;
-          in [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ]
-        ) 9)
-    );
+    bind =
+      [
+        "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png')"
+        "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png')"
+        "$mod, Q, killactive"
+        "$mod, DELETE, exit"
+        "$mod, V, togglefloating"
+        "$mod, F, fullscreen"
+        "$mod, P, pin"
+        "$mod, F1, exec, walker"
+        "$mod, F2, exec, ghostty"
+        "$mod, F3, exec, firefox"
+        "$mod, F4, exec, ghostty -e yazi"
+        "$mod, F5, exec, thunar"
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
+        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+      ]
+      ++ (
+        builtins.concatLists (builtins.genList
+          (
+            i: let
+              ws = i + 1;
+            in [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          )
+          9)
+      );
 
     bindl = [
       ", XF86AudioNext, exec, playerctl next"
@@ -47,4 +51,3 @@
     ];
   };
 }
-

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs = {
     nano.enable = false; # i use neovim btw
     neovim.enable = true;

@@ -1,13 +1,11 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment = {
     systemPackages = with pkgs; [
       tree
       unzip
     ];
 
-    defaultPackages = [ ];
+    defaultPackages = [];
 
     variables = {
       EDITOR = "nvim";

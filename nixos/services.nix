@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   services = {
     gvfs.enable = true;
     tumbler.enable = true;

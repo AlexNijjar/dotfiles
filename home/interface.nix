@@ -1,7 +1,9 @@
-{ inputs, pkgs, ... }:
-
 {
-  imports = [ inputs.catppuccin.homeModules.catppuccin ];
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [inputs.catppuccin.homeModules.catppuccin];
   home.pointerCursor = {
     gtk.enable = true;
     hyprcursor.enable = true;

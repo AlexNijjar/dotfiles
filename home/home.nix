@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./interface.nix
     ./programs/ghostty.nix

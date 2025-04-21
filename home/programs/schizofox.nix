@@ -25,16 +25,16 @@
 
     settings = {
       "privacy.resistFingerprinting" = false;
+    };
+
+    security = {
+      sandbox.enable = false;
       sanitizeOnShutdown.sanitize = {
         downloads = true;
         formdata = true;
         history = true;
       };
       noSessionRestore = true;
-    };
-
-    security = {
-      sandbox.enable = false;
     };
 
     extensions = {

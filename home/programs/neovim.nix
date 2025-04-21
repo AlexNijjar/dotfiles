@@ -1,206 +1,60 @@
-{ pkgs, ... }:
-
 {
-  programs.neovim = {
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [
+    inputs.nvf.homeManagerModules.default
+    ./neovim/binds.nix
+    ./neovim/languages.nix
+    ./neovim/neogit.nix
+    ./neovim/theme.nix
+  ];
+
+  programs.nvf = {
     enable = true;
     defaultEditor = true;
-    vimAlias = true;
-    viAlias = true;
+    settings.vim = {
+      viAlias = true;
+      vimAlias = true;
+      searchCase = "smart";
 
-    extraPackages = with pkgs; [
-      tree-sitter
-      nixd
-      basedpyright
-      typescript-language-server
-      rust-analyzer
-      lua-language-server
-      bash-language-server
-      yaml-language-server
-      taplo
-      vscode-langservers-extracted
-      marksman
+      assistant.copilot.enable = true;
+      telescope.enable = true;
+      notify.nvim-notify.enable = true;
+      tabline.nvimBufferline.enable = true;
 
-      nixpkgs-fmt
-      ruff
-      prettierd
-      eslint
-      eslint_d
-      rustfmt
-      stylua
-    ];
+      dashboard = {
+        dashboard-nvim.enable = false;
+        alpha.enable = true;
+      };
 
-    extraLuaConfig = ''
-      vim.opt.showmatch = true
-      vim.opt.ignorecase = true
-      vim.opt.mouse = "a"
-      vim.opt.hlsearch = true
-      vim.opt.incsearch = true
-      vim.opt.tabstop = 4
-      vim.opt.softtabstop = 4
-      vim.opt.expandtab = true
-      vim.opt.shiftwidth = 4
-      vim.opt.autoindent = true
-      vim.opt.smartindent = true
-      vim.opt.relativenumber = true
-      vim.opt.wildmode = { "longest", "list" }
-      vim.opt.cursorline = true
-      vim.opt.ttyfast = true
-      vim.opt.clipboard = "unnamedplus"
-      vim.opt.endofline = true
-      vim.opt.fixendofline = true
-      vim.opt.spell = true
-      vim.opt.spelllang = { "en_us" }
+      utility = {
+        vim-wakatime.enable = true;
+        multicursors.enable = true;
+        yazi-nvim.enable = true;
+      };
 
-      vim.g.NERDTreeShowHidden = 1
-      vim.g.NERDTreeMinimalUI = 1
+      git = {
+        enable = true;
+        gitsigns.enable = true;
+      };
 
-      vim.keymap.set("v", "<C-c>", '"+y', { noremap = true })
-      vim.keymap.set('n', '<leader>t', ':botright 20split term://$SHELL<CR>i', {noremap = true})
+      filetree.neo-tree = {
+        enable = true;
+        setupOpts = {
+          auto_clean_after_session_restore = true;
+          close_if_last_window = true;
+        };
+      };
 
-      vim.cmd([[
-        autocmd VimEnter * NERDTree | wincmd p
-        autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-      ]])
-
-      require('lualine').setup()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local lspconfig = require("lspconfig")
-
-      local servers = {
-          "nixd",
-          "bashls",
-          "marksman",
-          "basedpyright",
-          "rust_analyzer",
-          "lua_ls",
-          "tsserver",
-          "yamlls",
-          "taplo",
-          "jsonls",
-          "cssls",
-          "html",
-          "ruff_lsp",
-          "eslint",
-      }
-
-      for _, server in ipairs(servers) do
-          lspconfig[server].setup({
-              capabilities = capabilities,
-          })
-      end
-
-      require("conform").setup({
-          formatters_by_ft = {
-              nix = { "nixpkgs_fmt" },
-              python = { "ruff_format" },
-              javascript = { "prettierd" },
-              typescript = { "prettierd" },
-              json = { "prettierd" },
-              yaml = { "prettierd" },
-              html = { "prettierd" },
-              css = { "prettierd" },
-              markdown = { "prettierd" },
-              rust = { "rustfmt" },
-              lua = { "stylua" },
-              toml = { "taplo" },
-          },
-          format_on_save = {
-              timeout_ms = 500,
-              lsp_fallback = true,
-          },
-      })
-
-      local lsp_binds = {
-          { "gd", vim.lsp.buf.definition },
-          { "gr", vim.lsp.buf.references },
-          { "K", vim.lsp.buf.hover },
-          { "gl", vim.diagnostic.open_float },
-          { "[d", vim.diagnostic.goto_prev },
-          { "]d", vim.diagnostic.goto_next },
-          { "<leader>rn", vim.lsp.buf.rename },
-          { "<leader>ca", vim.lsp.buf.code_action },
-          {
-              "<leader>f",
-              function()
-                  require("conform").format()
-              end,
-          },
-      }
-
-      for _, bind in ipairs(lsp_binds) do
-          vim.keymap.set("n", bind[1], bind[2], {})
-      end
-
-      local cmp = require("cmp")
-      cmp.setup({
-          mapping = cmp.mapping.preset.insert({
-              ["<C-Space>"] = cmp.mapping.complete(),
-              ["<CR>"] = cmp.mapping.confirm({ select = true }),
-              ["<Tab>"] = cmp.mapping.select_next_item(),
-              ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          }),
-          sources = cmp.config.sources({
-              { name = "nvim_lsp" },
-              { name = "buffer" },
-          }),
-      })
-
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      cmp.event:on(
-        "confirm_done",
-        cmp_autopairs.on_confirm_done()
-      )
-
-      require("nvim-autopairs").setup({
-        check_ts = true,
-        disable_filetype = { "TelescopePrompt" },
-        enable_check_bracket_line = true,
-        map_cr = true,
-      })
-
-      require("auto-save").setup({
-        enabled = true,
-      })
-
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-
-      vim.keymap.set("n", "<leader>n", ":NERDTreeFocus<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "<C-n>", ":NERDTree<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "<C-t>", ":NERDTreeToggle<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "<C-f>", ":NERDTreeFind<CR>", { noremap = true, silent = true })
-      
-      local neogit = require("neogit")
-      vim.keymap.set("n", "<leader>gs", function() neogit.open() end, { desc = "Neogit status" })
-      vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, { desc = "Neogit commit" })
-      vim.keymap.set("n", "<leader>gp", function() neogit.open({ "push" }) end, { desc = "Neogit push" })
-      vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { desc = "Neogit fetch" })
-      vim.keymap.set("n", "<leader>gl", function() neogit.open({ "pull" }) end, { desc = "Neogit pull" })
-    '';
-
-    plugins = with pkgs.vimPlugins; [
-      auto-save-nvim
-      catppuccin-nvim
-      cmp-nvim-lsp
-      cmp-buffer
-      conform-nvim
-      copilot-vim
-      lualine-nvim
-      nerdtree
-      neogit
-      nvim-autopairs
-      nvim-cmp
-      nvim-lspconfig
-      nvim-notify
-      nvim-treesitter.withAllGrammars
-      telescope-nvim
-      vim-commentary
-      vim-nix
-      vim-wakatime
-      which-key-nvim
-    ];
+      autocmds = [
+        {
+          enable = true;
+          event = ["VimEnter"];
+          command = ":Neotree show";
+        }
+      ];
+    };
   };
 }

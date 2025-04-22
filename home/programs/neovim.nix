@@ -18,10 +18,16 @@
       options = {
         autoindent = true;
         tabstop = 4;
+        shiftwidth = 4;
+        expandtab = true;
         wrap = false;
       };
 
-      assistant.copilot.enable = true;
+      assistant.copilot = {
+        enable = true;
+        cmp.enable = true;
+      };
+
       telescope.enable = true;
       notify.nvim-notify.enable = true;
       tabline.nvimBufferline.enable = true;

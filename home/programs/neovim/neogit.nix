@@ -28,6 +28,11 @@
           key = "<leader>gl";
           action = ":Neogit pull<CR>";
         }
+        {
+          mode = ["n"];
+          key = "<leader>gb";
+          action = ":Neogit branch<CR>";
+        }
       ];
     };
   };

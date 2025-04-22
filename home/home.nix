@@ -36,6 +36,10 @@
       jq
       sops
       openssl
+      openssl.dev
+      openssl.out
+      pkg-config
+      protobuf
     ];
   };
 

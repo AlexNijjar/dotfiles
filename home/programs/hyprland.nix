@@ -5,6 +5,7 @@
     ./hyprland/decoration.nix
     ./hyprland/hyprpaper.nix
     ./hyprland/general.nix
+    ./hyprland/hypridle.nix
     ./hyprland/window-rules.nix
   ];
 

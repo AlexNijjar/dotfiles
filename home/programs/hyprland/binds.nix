@@ -6,6 +6,7 @@
         "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png')"
         "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png')"
         "$mod, Q, killactive"
+        "$mod, esc, exec, hyprlock"
         "$mod, DELETE, exit"
         "$mod, V, togglefloating"
         "$mod, F, fullscreen"

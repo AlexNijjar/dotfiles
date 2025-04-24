@@ -30,5 +30,6 @@
       Defaults timestamp_type=global
     '';
     pam.services.greetd.enableGnomeKeyring = true;
+    pam.services.hyprlock = {};
   };
 }

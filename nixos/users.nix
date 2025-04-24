@@ -23,13 +23,4 @@
     defaultUserShell = pkgs.nushell;
     mutableUsers = false;
   };
-
-  security = {
-    sudo.extraConfig = ''
-      Defaults timestamp_timeout=60
-      Defaults timestamp_type=global
-    '';
-    pam.services.greetd.enableGnomeKeyring = true;
-    pam.services.hyprlock = {};
-  };
 }

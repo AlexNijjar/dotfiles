@@ -54,6 +54,7 @@
           ./nixos/hardware-configuration.nix
           ./nixos/networking.nix
           ./nixos/programs.nix
+          ./nixos/security.nix
           ./nixos/services.nix
           ./nixos/sunshine.nix
           ./nixos/users.nix

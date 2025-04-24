@@ -6,8 +6,9 @@
   sops.secrets.wpa_supplicant = {};
 
   networking = {
-    hostName = "nixos";
     useDHCP = false;
+    useNetworkd = true;
+    wireguard.enable = true;
     wireless = {
       enable = true;
       secretsFile = config.sops.secrets.wpa_supplicant.path;
@@ -16,15 +17,27 @@
     interfaces.wlp11s0 = {
       useDHCP = false;
       wakeOnLan.enable = true;
-      ipv4.addresses = [
-        {
-          address = "10.0.4.2";
-          prefixLength = 24;
-        }
-      ];
+      ipv4 = {
+        addresses = [
+          {
+            address = "10.0.4.2";
+            prefixLength = 24;
+          }
+        ];
+        routes = [
+          {
+            address = "10.0.4.1";
+            prefixLength = 24;
+          }
+        ];
+      };
     };
-    defaultGateway = "10.0.4.1";
+    defaultGateway = {
+      address = "10.0.4.1";
+      interface = "wlp11s0";
+    };
     nameservers = ["1.1.1.1" "8.8.8.8"];
+    firewall.allowedTCPPorts = [22];
   };
 
   systemd.services.enable-wowlan = {

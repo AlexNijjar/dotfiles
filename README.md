@@ -11,5 +11,4 @@ and use any of the shit in here.
 - make thunar config declarative
 - make text files in thunar open in nvim
 - setup gaming stuff (steam, lutrus, proton etc)
-- fix no wifi when waking up from sleep
 - add a bar

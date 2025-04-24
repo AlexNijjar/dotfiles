@@ -14,6 +14,8 @@
 
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      OZONE_PLATFORM = "wayland";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
 
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_DESKTOP = "Hyprland";

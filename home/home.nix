@@ -10,6 +10,7 @@
     ./programs/spicetify.nix
     ./programs/starship.nix
     ./programs/ssh.nix
+    ./programs/thunderbird.nix
     ./programs/vesktop.nix
     ./programs/walker.nix
     ./programs/yazi.nix

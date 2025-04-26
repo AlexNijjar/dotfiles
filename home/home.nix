@@ -41,6 +41,9 @@
       openssl.out
       pkg-config
       protobuf
+      rustfmt
+      clippy
+      unrar
     ];
   };
 

@@ -1,7 +1,7 @@
 {inputs, ...}:
 # Some settings taken from: https://github.com/diniamo/niqs/blob/main/home/schizofox.nix
 {
-  imports = [inputs.schizofox.nixosModules.default];
+  imports = [inputs.schizofox.homeManagerModules.default];
   programs.schizofox = {
     enable = true;
 
@@ -24,6 +24,11 @@
 
     settings = {
       "privacy.resistFingerprinting" = false;
+      "privacy.resistFingerprinting.letterboxing" = false;
+      "dom.event.clipboardevents.enabled" = true;
+      "browser.download.useDownloadDir" = true;
+      "browser.download.always_ask_before_handling_new_types" = false;
+      "browser.download.dir" = "~/Downloads";
     };
 
     security = {

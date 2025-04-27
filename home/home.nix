@@ -5,6 +5,7 @@
     ./programs/git.nix
     ./programs/hyprland.nix
     ./programs/nushell.nix
+    ./programs/schizofox.nix
     ./programs/ssh.nix
     ./programs/starship.nix
     ./programs/thunderbird.nix

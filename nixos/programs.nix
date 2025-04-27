@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./programs/neovim.nix
-    ./programs/schizofox.nix
     ./programs/spicetify.nix
     ./programs/steam.nix
     ./programs/sunshine.nix

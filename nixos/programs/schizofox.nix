@@ -1,7 +1,7 @@
 {inputs, ...}:
 # Some settings taken from: https://github.com/diniamo/niqs/blob/main/home/schizofox.nix
 {
-  imports = [inputs.schizofox.homeManagerModules.default];
+  imports = [inputs.schizofox.nixosModules.default];
   programs.schizofox = {
     enable = true;
 
@@ -60,12 +60,22 @@
       bookmarks = [
         {
           Title = "YouTube";
-          URL = "https://www.youtube.com/";
+          URL = "https://www.youtube.com";
           Placement = "toolbar";
         }
         {
           Title = "GitHub";
           URL = "https://github.com/AlexNijjar";
+          Placement = "toolbar";
+        }
+        {
+          Title = "Claude";
+          URL = "https://claude.ai";
+          Placement = "toolbar";
+        }
+        {
+          Title = "ChatGPT";
+          URL = "https://chatgpt.com";
           Placement = "toolbar";
         }
         {

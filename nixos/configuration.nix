@@ -36,5 +36,11 @@
     twemoji-color-font
   ];
 
+  catppuccin = {
+    enable = true;
+    accent = "mauve";
+    flavor = "mocha";
+  };
+
   system.stateVersion = "24.11";
 }

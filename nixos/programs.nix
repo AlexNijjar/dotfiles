@@ -1,4 +1,13 @@
 {pkgs, ...}: {
+  imports = [
+    ./programs/neovim.nix
+    ./programs/schizofox.nix
+    ./programs/spicetify.nix
+    ./programs/steam.nix
+    ./programs/sunshine.nix
+    ./programs/walker.nix
+    ./programs/yazi.nix
+  ];
   programs = {
     nano.enable = false; # i use neovim btw
     neovim.enable = true;

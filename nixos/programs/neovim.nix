@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    inputs.nvf.homeManagerModules.default
+    inputs.nvf.nixosModules.default
     ./neovim/binds.nix
     ./neovim/languages.nix
     ./neovim/neogit.nix

@@ -56,8 +56,6 @@
           ./nixos/programs.nix
           ./nixos/security.nix
           ./nixos/services.nix
-          ./nixos/steam.nix
-          ./nixos/sunshine.nix
           ./nixos/users.nix
         ];
       };

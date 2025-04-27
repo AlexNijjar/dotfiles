@@ -4,16 +4,11 @@
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
-    ./programs/neovim.nix
     ./programs/nushell.nix
-    ./programs/schizofox.nix
-    ./programs/spicetify.nix
-    ./programs/starship.nix
     ./programs/ssh.nix
+    ./programs/starship.nix
     ./programs/thunderbird.nix
     ./programs/vesktop.nix
-    ./programs/walker.nix
-    ./programs/yazi.nix
   ];
 
   home = {
@@ -64,6 +59,7 @@
       enable = true;
       enableNushellIntegration = true;
     };
+    yazi.enable = true;
     zoxide = {
       enable = true;
       enableNushellIntegration = true;

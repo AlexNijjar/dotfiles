@@ -3,6 +3,8 @@
     systemPackages = with pkgs; [
       tree
       unzip
+      rocmPackages.amdsmi
+      rocmPackages.rocm-smi
     ];
 
     defaultPackages = [];

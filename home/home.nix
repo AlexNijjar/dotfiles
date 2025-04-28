@@ -4,12 +4,15 @@
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
+    ./programs/mpd.nix
     ./programs/nushell.nix
     ./programs/schizofox.nix
     ./programs/ssh.nix
     ./programs/starship.nix
     ./programs/thunderbird.nix
     ./programs/vesktop.nix
+    ./programs/waybar.nix
+    ./programs/yazi.nix
   ];
 
   home = {
@@ -21,6 +24,7 @@
       jetbrains.idea-ultimate
       jetbrains.pycharm-professional
       krabby
+      pavucontrol
       wl-clipboard
       ffmpegthumbnailer
       grim
@@ -29,6 +33,7 @@
       gcc
       cargo
       nodejs_20
+      python3
       uv
       jq
       sops
@@ -45,6 +50,7 @@
 
   programs = {
     btop.enable = true;
+    cava.enable = true;
     fastfetch.enable = true;
     obs-studio.enable = true;
     imv.enable = true;
@@ -60,7 +66,6 @@
       enable = true;
       enableNushellIntegration = true;
     };
-    yazi.enable = true;
     zoxide = {
       enable = true;
       enableNushellIntegration = true;
@@ -75,4 +80,6 @@
     podman.enable = true;
     swayosd.enable = true;
   };
+
+  xdg.userDirs.enable = true;
 }

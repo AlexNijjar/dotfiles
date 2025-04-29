@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ./interface.nix
     ./programs/ghostty.nix
@@ -15,38 +15,7 @@
     ./programs/yazi.nix
   ];
 
-  home = {
-    stateVersion = "24.11";
-    packages = with pkgs; [
-      lutris
-      stremio
-      via
-      jetbrains.idea-ultimate
-      jetbrains.pycharm-professional
-      krabby
-      pavucontrol
-      wl-clipboard
-      ffmpegthumbnailer
-      grim
-      slurp
-      xarchiver
-      gcc
-      cargo
-      nodejs_20
-      python3
-      uv
-      jq
-      sops
-      openssl
-      openssl.dev
-      openssl.out
-      pkg-config
-      protobuf
-      rustfmt
-      clippy
-      unrar
-    ];
-  };
+  home.stateVersion = "24.11";
 
   programs = {
     btop.enable = true;

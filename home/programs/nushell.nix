@@ -23,7 +23,9 @@
     };
 
     extraConfig = ''
-      krabby random
+      if 'TERM_PROGRAM' in ($env | columns) and $env.TERM_PROGRAM == "ghostty" and (not ('NVIM' in ($env | columns))) {
+        krabby random
+      }
     '';
   };
 }

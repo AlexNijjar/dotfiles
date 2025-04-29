@@ -31,6 +31,7 @@
       telescope.enable = true;
       notify.nvim-notify.enable = true;
       tabline.nvimBufferline.enable = true;
+      terminal.toggleterm.enable = true;
 
       dashboard = {
         dashboard-nvim.enable = false;

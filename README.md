@@ -10,4 +10,3 @@ and use any of the shit in here.
 - make jetbrains settings and wayland declarative
 - make thunar config declarative
 - make text files in thunar open in nvim
-- add a bar

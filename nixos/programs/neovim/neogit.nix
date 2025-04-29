@@ -4,33 +4,33 @@
       package = pkgs.vimPlugins.neogit;
       keys = [
         {
-          mode = ["n"];
           key = "<leader>gs";
+          mode = ["n"];
           action = ":Neogit<CR>";
         }
         {
-          mode = ["n"];
           key = "<leader>gc";
+          mode = ["n"];
           action = ":Neogit commit<CR>";
         }
         {
-          mode = ["n"];
           key = "<leader>gp";
+          mode = ["n"];
           action = ":Neogit push<CR>";
         }
         {
-          mode = ["n"];
           key = "<leader>gf";
+          mode = ["n"];
           action = ":Neogit fetch<CR>";
         }
         {
-          mode = ["n"];
           key = "<leader>gl";
+          mode = ["n"];
           action = ":Neogit pull<CR>";
         }
         {
-          mode = ["n"];
           key = "<leader>gb";
+          mode = ["n"];
           action = ":Neogit branch<CR>";
         }
       ];

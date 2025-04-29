@@ -1,5 +1,16 @@
 {
-  programs.hyprlock.enable = true;
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      background = {
+        path = "screenshot";
+        blur_passes = 2;
+        blur_size = 5;
+        contrast = 1.2;
+        brightness = 0.6;
+      };
+    };
+  };
   services.hypridle = {
     enable = true;
     settings = {

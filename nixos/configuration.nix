@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   nix = {
     settings = {
+      warn-dirty = false;
       auto-optimise-store = true;
       experimental-features = "nix-command flakes";
       substituters = ["https://walker.cachix.org"];
@@ -22,6 +23,7 @@
       sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
       generateKey = true;
     };
+    log = ["secretChanges"];
   };
 
   # Disable all devices waking up my computer
@@ -41,6 +43,8 @@
     accent = "mauve";
     flavor = "mocha";
   };
+
+  documentation.nixos.enable = false;
 
   system.stateVersion = "24.11";
 }

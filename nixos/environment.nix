@@ -32,6 +32,7 @@
         clippy
         unrar
         speedtest-cli
+        gh
       ]
       ++ (let
         vmopts = ''

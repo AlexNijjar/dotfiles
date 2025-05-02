@@ -18,7 +18,7 @@
       {
         key = "<leader>n";
         mode = ["n"];
-        action = ":Neotree focus<CR>";
+        action = ":Neotree toggle<CR>";
         desc = "Open Neotree";
       }
       {

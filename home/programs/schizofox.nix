@@ -30,6 +30,7 @@
       "browser.download.always_ask_before_handling_new_types" = false;
       "browser.download.dir" = "~/Downloads";
       "mousewheel.with_control.action" = 0;
+      "browser.fullscreen.autohide" = false;
     };
 
     security = {

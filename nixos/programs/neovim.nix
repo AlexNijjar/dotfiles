@@ -62,14 +62,6 @@
           };
         };
       };
-
-      autocmds = [
-        {
-          enable = true;
-          event = ["VimEnter"];
-          command = ":Neotree show";
-        }
-      ];
     };
   };
 }

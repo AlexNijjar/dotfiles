@@ -6,6 +6,7 @@
         unzip
         rocmPackages.amdsmi
         rocmPackages.rocm-smi
+        rocmPackages.rocminfo
         lutris
         stremio
         via
@@ -50,6 +51,7 @@
     variables = {
       EDITOR = "nvim";
       TERMINAL = "ghostty";
+      LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib";
     };
 
     sessionVariables = {
@@ -63,5 +65,12 @@
 
       XCURSOR_SIZE = 24;
     };
+  };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      uv
+    ];
   };
 }

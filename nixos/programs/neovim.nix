@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.nvf.nixosModules.default
     ./neovim/binds.nix
@@ -28,9 +32,26 @@
         cmp.enable = true;
       };
 
-      telescope.enable = true;
+      telescope = {
+        enable = true;
+        setupOpts = {
+          pickers.find_files.find_command = [
+            "${pkgs.fd}/bin/fd"
+            "--type=file"
+            "--hidden"
+            "--no-ignore"
+            "--exclude=.venv"
+            "--exclude=.idea"
+            "--exclude=assets"
+            "--exclude=.husky"
+          ];
+        };
+      };
+
       notify.nvim-notify.enable = true;
-      terminal.toggleterm.enable = true;
+      terminal.toggleterm = {
+        enable = true; # TODO enable insert_mappings & terminal_mappings
+      };
 
       dashboard = {
         dashboard-nvim.enable = false;
@@ -44,6 +65,11 @@
       };
 
       navigation.harpoon.enable = true;
+
+      projects.project-nvim = {
+        enable = true;
+        setupOpts.manual_mode = false;
+      };
 
       git = {
         enable = true;

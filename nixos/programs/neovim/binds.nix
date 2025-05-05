@@ -5,6 +5,7 @@
     binds = {
       whichKey.enable = true;
       cheatsheet.enable = true;
+      hardtime-nvim.enable = true;
     };
 
     keymaps = [
@@ -16,38 +17,18 @@
         desc = "Yank with CTRL+C";
       }
       {
-        key = "<leader>n";
+        key = "<C-n>";
         mode = ["n"];
-        action = ":Neotree toggle<CR>";
-        desc = "Open Neotree";
-      }
-      {
-        key = "<S-l>";
-        mode = ["n"];
-        action = ":BufferLineCycleNext<CR>";
+        action = ":bnext<CR>";
         noremap = true;
         desc = "Next buffer";
       }
       {
-        key = "<S-h>";
+        key = "<C-p>";
         mode = ["n"];
-        action = ":BufferLineCyclePrev<CR>";
+        action = ":bprevious<CR>";
         noremap = true;
         desc = "Previous buffer";
-      }
-      {
-        key = "<leader>c";
-        mode = ["n"];
-        action = ":Bdelete<CR>";
-        noremap = true;
-        desc = "Close buffer";
-      }
-      {
-        key = "<leader>bc";
-        mode = ["n"];
-        action = ":BufferLineCloseOthers<CR>";
-        noremap = true;
-        desc = "Close other buffers";
       }
     ];
   };

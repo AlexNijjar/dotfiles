@@ -12,7 +12,6 @@
       formatOnSave = true;
       inlayHints.enable = true;
       lspSignature.enable = true;
-      otter-nvim.enable = true;
       trouble.enable = true;
     };
 

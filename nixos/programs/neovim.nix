@@ -30,7 +30,6 @@
 
       telescope.enable = true;
       notify.nvim-notify.enable = true;
-      tabline.nvimBufferline.enable = true;
       terminal.toggleterm.enable = true;
 
       dashboard = {
@@ -44,23 +43,11 @@
         yazi-nvim.enable = true;
       };
 
+      navigation.harpoon.enable = true;
+
       git = {
         enable = true;
         gitsigns.enable = true;
-      };
-
-      filetree.neo-tree = {
-        enable = true;
-        setupOpts = {
-          auto_clean_after_session_restore = true;
-          close_if_last_window = true;
-          filesystem.filtered_items.visible = true;
-          window = {
-            mappings = {
-              "<space>" = "open";
-            };
-          };
-        };
       };
     };
   };

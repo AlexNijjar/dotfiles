@@ -43,7 +43,7 @@
 
   services = {
     mako = {
-      enable = true;
+      enable = false;
       defaultTimeout = 5000;
     };
     podman.enable = true;

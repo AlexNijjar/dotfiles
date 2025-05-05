@@ -28,6 +28,7 @@
 
   catppuccin = {
     enable = true;
+    mako.enable = false;
     accent = "mauve";
     flavor = "mocha";
     gtk.icon = {

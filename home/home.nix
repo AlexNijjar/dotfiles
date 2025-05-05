@@ -43,8 +43,8 @@
 
   services = {
     mako = {
-      enable = false;
-      defaultTimeout = 5000;
+      enable = true;
+      settings.defaultTimeout = "5000";
     };
     podman.enable = true;
     swayosd.enable = true;

@@ -18,8 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     walker.url = "github:abenz1267/walker";
-    # catppuccin.url = "github:catppuccin/nix";
-    catppuccin.url = "github:MisileLab/nix";
+    catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
     schizofox.url = "github:schizofox/schizofox";
     wallpkgs.url = "github:NotAShelf/wallpkgs";

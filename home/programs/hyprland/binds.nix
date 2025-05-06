@@ -15,7 +15,7 @@
         "$mod, F1, exec, ghostty"
         "$mod, F2, exec, ghostty -e nvim"
         "$mod, F3, exec, ghostty -e yazi"
-        "$mod, F4, exec, firefox"
+        "$mod, F4, exec, schizofox"
         "$mod, F5, exec, thunar"
         "$mod_SHIFT, H, movefocus, l"
         "$mod_SHIFT, J, movefocus, d"

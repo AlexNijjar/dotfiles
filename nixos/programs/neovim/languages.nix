@@ -13,6 +13,18 @@
       inlayHints.enable = true;
       lspSignature.enable = true;
       trouble.enable = true;
+
+      lspconfig = {
+        enable = true;
+        sources = {
+          ruff = ''
+            lspconfig.ruff.setup {
+              capabilities = capabilities;
+              on_attach = default_on_attach;
+            }
+          '';
+        };
+      };
     };
 
     languages = {
@@ -29,7 +41,10 @@
       lua.enable = true;
       markdown.enable = true;
       nix.enable = true;
-      python.enable = true;
+      python = {
+        enable = true;
+        format.type = "ruff";
+      };
       rust.enable = true;
       sql.enable = true;
       ts.enable = true;

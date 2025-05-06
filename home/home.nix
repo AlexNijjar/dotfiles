@@ -51,4 +51,19 @@
   };
 
   xdg.userDirs.enable = true;
+
+  programs.ruff = {
+    enable = true;
+    settings = {
+      fix = true;
+    };
+  };
+
+  programs.uv = {
+    enable = true;
+    settings = {
+      python-downloads = "never";
+      python-preference = "only-system";
+    };
+  };
 }

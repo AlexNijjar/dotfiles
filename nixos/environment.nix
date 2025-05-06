@@ -21,7 +21,6 @@
         cargo
         nodejs_20
         python3
-        uv
         jq
         sops
         openssl

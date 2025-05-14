@@ -3,9 +3,23 @@
     syntaxHighlighting = true;
     treesitter.context.enable = true;
     autocomplete.nvim-cmp.enable = true;
-    spellcheck.enable = true;
     autopairs.nvim-autopairs.enable = true;
     comments.comment-nvim.enable = true;
+
+    spellcheck = {
+      enable = true;
+      programmingWordlist.enable = true;
+      extraSpellWords = {
+        "en.utf-8" = [
+          "nijjar"
+          "wai"
+          "w_ai"
+          "gpu"
+          "gpus"
+          "adastra"
+        ];
+      };
+    };
 
     lsp = {
       enable = true;

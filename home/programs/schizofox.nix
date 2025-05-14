@@ -19,7 +19,7 @@
       defaultSearchEngine = "Searx";
       removeEngines = ["DuckDuckGo" "Bing" "Amazon.com" "eBay" "Twitter" "Wikipedia"];
       searxUrl = "https://search.notashelf.dev";
-      searxQuery = "https://search.notashelf.dev/search?q={searchTerms}";
+      searxQuery = "https://baresearch.org/search?q={searchTerms}";
     };
 
     settings = {

@@ -32,13 +32,4 @@
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wineWowPackages.stable
-        winetricks
-      ];
-    })
-  ];
 }

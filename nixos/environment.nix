@@ -33,6 +33,7 @@
         unrar
         speedtest-cli
         gh
+        modrinth-app
       ]
       ++ (let
         vmopts = ''

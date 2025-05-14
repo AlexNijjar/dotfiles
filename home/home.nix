@@ -4,6 +4,7 @@
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
+    ./programs/lutris.nix
     ./programs/mpd.nix
     ./programs/nushell.nix
     ./programs/schizofox.nix
@@ -27,6 +28,7 @@
     ripgrep.enable = true;
     fd.enable = true;
     bun.enable = true;
+    uv.enable = true;
     carapace = {
       enable = true;
       enableNushellIntegration = true;
@@ -56,14 +58,6 @@
     enable = true;
     settings = {
       fix = true;
-    };
-  };
-
-  programs.uv = {
-    enable = true;
-    settings = {
-      python-downloads = "never";
-      python-preference = "only-system";
     };
   };
 }

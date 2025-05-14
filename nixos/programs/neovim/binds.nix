@@ -1,6 +1,9 @@
 {
   programs.nvf.settings.vim = {
-    useSystemClipboard = true;
+    clipboard = {
+      enable = true;
+      registers = "unnamedplus";
+    };
 
     binds = {
       whichKey.enable = true;

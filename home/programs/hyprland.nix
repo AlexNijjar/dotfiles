@@ -18,7 +18,7 @@
       "$sapphire" = "rgb(74c7ec)";
       "$base" = "rgb(1e1e2e)";
 
-      "$scale" = "1.5";
+      "$scale" = "1.25";
 
       monitor = [", highres, auto, $scale"];
 

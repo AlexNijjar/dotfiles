@@ -4,6 +4,7 @@
   ...
 }: {
   services = {
+    envfs.enable = true;
     gvfs.enable = true;
     tumbler.enable = true;
     playerctld.enable = true;

@@ -4,7 +4,6 @@
       Defaults timestamp_timeout=60
       Defaults timestamp_type=global
     '';
-    sudo.wheelNeedsPassword = false;
 
     pam.services = {
       greetd.enableGnomeKeyring = true;

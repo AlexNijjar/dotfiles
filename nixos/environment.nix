@@ -7,7 +7,6 @@
         rocmPackages.amdsmi
         rocmPackages.rocm-smi
         rocmPackages.rocminfo
-        lutris
         stremio
         via
         krabby
@@ -70,8 +69,42 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      uv
+      alsa-lib
+      atk
+      cairo
+      cups
+      dbus
+      expat
+      glib
       gtk3
+      libdrm
+      libgbm
+      libGL
+      libvdpau
+      libxkbcommon
+      mesa
+      nspr
+      nss
+      pango
+      pipewire
+      vulkan-loader
+      wayland
+      xorg.libX11
+      xorg.libxcb
+      xorg.libXcomposite
+      xorg.libXdamage
+      xorg.libXext
+      xorg.libXfixes
+      xorg.libXrandr
+
+      xorg.xcbutilimage # Important for image buffer formats
+      xorg.xcbutilwm
+      xorg.xcbutilrenderutil
+
+      # Video format processing
+      gst_all_1.gstreamer
+      gst_all_1.gst-plugins-base
+      gst_all_1.gst-plugins-good
     ];
   };
 }

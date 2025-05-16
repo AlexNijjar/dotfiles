@@ -96,15 +96,6 @@
       xorg.libXext
       xorg.libXfixes
       xorg.libXrandr
-
-      xorg.xcbutilimage # Important for image buffer formats
-      xorg.xcbutilwm
-      xorg.xcbutilrenderutil
-
-      # Video format processing
-      gst_all_1.gstreamer
-      gst_all_1.gst-plugins-base
-      gst_all_1.gst-plugins-good
     ];
   };
 }

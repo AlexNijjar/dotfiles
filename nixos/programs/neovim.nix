@@ -25,6 +25,7 @@
         shiftwidth = 4;
         expandtab = true;
         wrap = false;
+        scroll = 0;
       };
 
       assistant.copilot = {
@@ -62,6 +63,7 @@
         vim-wakatime.enable = true;
         multicursors.enable = true;
         yazi-nvim.enable = true;
+        diffview-nvim.enable = true;
       };
 
       navigation.harpoon.enable = true;
@@ -73,7 +75,16 @@
 
       git = {
         enable = true;
-        gitsigns.enable = true;
+        gitsigns = {
+          enable = true;
+          setupOpts = {
+            current_line_blame = true;
+            current_line_blame_opts = {
+              virt_text_pos = "right_align";
+              delay = 500;
+            };
+          };
+        };
       };
     };
   };

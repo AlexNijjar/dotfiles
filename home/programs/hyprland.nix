@@ -24,6 +24,8 @@
 
       exec-once = [
         "[workspace 1 silent] vesktop & ghostty -e spotify_player"
+        "[workspace 2 silent] firefox"
+        "spotify_player --daemon"
       ];
 
       env = [

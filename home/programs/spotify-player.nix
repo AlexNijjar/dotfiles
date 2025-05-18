@@ -8,7 +8,6 @@
         audio_cache = true;
       };
       layout.library = {
-        playlist_percent = 0;
         album_percent = 0;
       };
     };

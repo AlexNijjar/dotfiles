@@ -53,5 +53,11 @@
       "$mod, mouse:272, movewindow"
       "$mod, mouse:273, resizewindow"
     ];
+    binde = [
+      "$mod, right, resizeactive, 100 0"
+      "$mod, left, resizeactive, -100 0"
+      "$mod, up, resizeactive, 0 -100"
+      "$mod, down, resizeactive, 0 100"
+    ];
   };
 }

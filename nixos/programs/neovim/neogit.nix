@@ -33,6 +33,11 @@
           mode = ["n"];
           action = ":Neogit branch<CR>";
         }
+        {
+          key = "<leader>gd";
+          mode = ["n"];
+          action = ":Neogit diff<CR>";
+        }
       ];
     };
   };

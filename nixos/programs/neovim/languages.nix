@@ -21,13 +21,23 @@
       };
     };
 
+    diagnostics = {
+      enable = true;
+      config = {
+        virtual_text = true;
+        virtual_lines = true;
+        underline = true;
+        update_in_insert = false;
+        signs = true;
+      };
+    };
+
     lsp = {
       enable = true;
       formatOnSave = true;
       inlayHints.enable = true;
       lspSignature.enable = true;
       trouble.enable = true;
-
       lspconfig = {
         enable = true;
         sources = {

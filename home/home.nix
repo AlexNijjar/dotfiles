@@ -8,6 +8,7 @@
     ./programs/mpd.nix
     ./programs/nushell.nix
     ./programs/schizofox.nix
+    ./programs/spotify-player.nix
     ./programs/ssh.nix
     ./programs/starship.nix
     ./programs/thunderbird.nix

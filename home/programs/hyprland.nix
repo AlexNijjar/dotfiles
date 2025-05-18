@@ -23,7 +23,7 @@
       monitor = [", highres, auto, $scale"];
 
       exec-once = [
-        "[workspace 1 silent] vesktop & spotify"
+        "[workspace 1 silent] vesktop & ghostty -e spotify_player"
       ];
 
       env = [

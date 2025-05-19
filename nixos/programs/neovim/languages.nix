@@ -55,10 +55,12 @@
       enableTreesitter = true;
       enableFormat = true;
 
+      assembly.enable = true;
       bash.enable = true;
       clang.enable = true;
       css.enable = true;
       go.enable = true;
+      haskell.enable = true;
       html.enable = true;
       java.enable = true;
       kotlin.enable = true;
@@ -75,5 +77,17 @@
       yaml.enable = true;
       zig.enable = true;
     };
+
+    pluginRC.hcl = ''
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "nix,json,yaml,javascript,typescript",
+        callback = function(opts)
+          local bo = vim.bo[opts.buf]
+          bo.tabstop = 2
+          bo.shiftwidth = 2
+          bo.softtabstop = 2
+        end
+      })
+    '';
   };
 }

@@ -27,7 +27,21 @@
         desc = "Next buffer";
       }
       {
+        key = "<A-]>";
+        mode = ["n"];
+        action = ":bnext<CR>";
+        noremap = true;
+        desc = "Next buffer";
+      }
+      {
         key = "<C-p>";
+        mode = ["n"];
+        action = ":bprevious<CR>";
+        noremap = true;
+        desc = "Previous buffer";
+      }
+      {
+        key = "<A-[>";
         mode = ["n"];
         action = ":bprevious<CR>";
         noremap = true;
@@ -67,6 +81,13 @@
         action = "Gzz";
         noremap = true;
         desc = "Go to end of file";
+      }
+      {
+        key = "<leader>ct";
+        mode = ["n"];
+        action = ":Copilot toggle<CR>";
+        noremap = true;
+        desc = "Fuck off copilot";
       }
     ];
   };

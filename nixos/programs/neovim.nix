@@ -21,7 +21,9 @@
 
       options = {
         autoindent = true;
+        smartindent = true;
         tabstop = 4;
+        softtabstop = 4;
         shiftwidth = 4;
         expandtab = true;
         wrap = false;
@@ -44,15 +46,14 @@
             "--exclude=.venv"
             "--exclude=.idea"
             "--exclude=assets"
-            "--exclude=.husky"
+            "--exclude=dist"
+            "--exclude=node_modules"
+            "--exclude=build"
           ];
         };
       };
 
       notify.nvim-notify.enable = true;
-      terminal.toggleterm = {
-        enable = true; # TODO enable insert_mappings & terminal_mappings
-      };
 
       dashboard = {
         dashboard-nvim.enable = false;
@@ -70,7 +71,10 @@
 
       projects.project-nvim = {
         enable = true;
-        setupOpts.manual_mode = false;
+        setupOpts = {
+          manual_mode = false;
+          patterns = [".git"];
+        };
       };
 
       git = {

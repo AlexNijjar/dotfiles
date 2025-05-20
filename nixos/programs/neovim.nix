@@ -49,16 +49,15 @@
             "--exclude=dist"
             "--exclude=node_modules"
             "--exclude=build"
+            "--exclude=dll"
+            "--exclude=__pycache__"
+            "--exclude=.ruff_cache"
+            "--exclude=.pytest_cache"
           ];
         };
       };
 
       notify.nvim-notify.enable = true;
-
-      dashboard = {
-        dashboard-nvim.enable = false;
-        alpha.enable = true;
-      };
 
       utility = {
         vim-wakatime.enable = true;
@@ -73,6 +72,7 @@
         enable = true;
         setupOpts = {
           manual_mode = false;
+          detection_methods = ["pattern"];
           patterns = [".git"];
         };
       };

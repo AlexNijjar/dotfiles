@@ -32,6 +32,7 @@
         unrar
         speedtest-cli
         gh
+        ty
         modrinth-app
       ]
       ++ (let

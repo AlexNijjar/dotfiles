@@ -47,6 +47,23 @@
               on_attach = default_on_attach;
             }
           '';
+          ty = ''
+            local configs = require 'lspconfig.configs'
+            if not configs.ty then
+              configs.ty = {
+                default_config = {
+                  cmd = {"ty", "server"};
+                  filetypes = {"python"};
+                  root_dir = lspconfig.util.root_pattern("pyproject.toml");
+                  single_file_support = true;
+                }
+              }
+            end
+            lspconfig.ty.setup {
+              capabilities = capabilities;
+              on_attach = default_on_attach;
+            }
+          '';
         };
       };
     };
@@ -69,6 +86,7 @@
       nix.enable = true;
       python = {
         enable = true;
+        lsp.enable = false; # Using astral-sh/ty LSP
         format.type = "ruff";
       };
       rust.enable = true;
@@ -78,7 +96,7 @@
       zig.enable = true;
     };
 
-    pluginRC.hcl = ''
+    pluginRC.nix = ''
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "nix,json,yaml,javascript,typescript",
         callback = function(opts)
@@ -88,6 +106,8 @@
           bo.softtabstop = 2
         end
       })
+
+      vim.cmd("highlight SpellBad guisp=Green gui=undercurl")
     '';
   };
 }

@@ -9,6 +9,7 @@
       clipboard-paste-protection = false;
       confirm-close-surface = false;
       gtk-tabs-location = "hidden";
+      window-inherit-working-directory = true;
       keybind = [
         "performable:ctrl+c=copy_to_clipboard"
         "ctrl+v=paste_from_clipboard"

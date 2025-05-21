@@ -5,7 +5,7 @@
     settings = {
       theme = "catppuccin-mocha";
       font-size = 13;
-      background-opacity = 0.9;
+      background-opacity = 0.95;
       clipboard-paste-protection = false;
       confirm-close-surface = false;
       gtk-tabs-location = "hidden";

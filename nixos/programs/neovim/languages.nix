@@ -49,16 +49,13 @@
           '';
           ty = ''
             local configs = require 'lspconfig.configs'
-            if not configs.ty then
-              configs.ty = {
-                default_config = {
-                  cmd = {"ty", "server"};
-                  filetypes = {"python"};
-                  root_dir = lspconfig.util.root_pattern("pyproject.toml");
-                  single_file_support = true;
-                }
+            configs.ty = {
+              default_config = {
+                cmd = {"ty", "server"};
+                filetypes = {"python"};
+                root_dir = lspconfig.util.root_pattern("pyproject.toml");
               }
-            end
+            }
             lspconfig.ty.setup {
               capabilities = capabilities;
               on_attach = default_on_attach;

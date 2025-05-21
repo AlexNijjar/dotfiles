@@ -59,7 +59,6 @@
         "sponsorBlocker@ajay.app".install_url = mkUrl "sponsorblock";
         "uBlock0@raymondhill.net".install_url = mkUrl "ublock-origin";
         "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}".install_url = mkUrl "styl-us";
-        "tridactyl.vim@cmcaine.co.uk".install_url = mkUrl "tridactyl-vim";
         "{7b1bf0b6-a1b9-42b0-b75d-252036438bdc}".install_url = mkUrl "youtube-high-definition";
         "{bbb880ce-43c9-47ae-b746-c3e0096c5b76}".install_url = mkUrl "catppuccin-web-file-icons";
       };

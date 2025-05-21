@@ -42,17 +42,16 @@
             "${pkgs.fd}/bin/fd"
             "--type=file"
             "--hidden"
-            "--no-ignore"
-            "--exclude=.venv"
-            "--exclude=.idea"
-            "--exclude=assets"
-            "--exclude=dist"
-            "--exclude=node_modules"
-            "--exclude=build"
-            "--exclude=dll"
-            "--exclude=__pycache__"
-            "--exclude=.ruff_cache"
-            "--exclude=.pytest_cache"
+          ];
+          defaults.vimgrep_arguments = [
+            "${pkgs.ripgrep}/bin/rg"
+            "--color=never"
+            "--no-heading"
+            "--with-filename"
+            "--line-number"
+            "--column"
+            "--smart-case"
+            "--hidden"
           ];
         };
       };

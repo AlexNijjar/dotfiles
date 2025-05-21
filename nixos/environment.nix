@@ -42,7 +42,6 @@
         '';
       in [
         (jetbrains.idea-ultimate.override {vmopts = vmopts;})
-        (jetbrains.pycharm-professional.override {vmopts = vmopts;})
         jetbrains.jdk
       ]);
 

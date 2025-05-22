@@ -23,13 +23,7 @@
 
     diagnostics = {
       enable = true;
-      config = {
-        virtual_text = true;
-        virtual_lines = true;
-        underline = true;
-        update_in_insert = false;
-        signs = true;
-      };
+      config.virtual_lines = true;
     };
 
     lsp = {
@@ -68,6 +62,7 @@
     languages = {
       enableTreesitter = true;
       enableFormat = true;
+      enableExtraDiagnostics = true;
 
       assembly.enable = true;
       bash.enable = true;

@@ -34,6 +34,8 @@
         gh
         ty
         modrinth-app
+        dua
+        gradle
       ]
       ++ (let
         vmopts = ''

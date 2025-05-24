@@ -1,4 +1,8 @@
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.nvf.settings.vim = {
     syntaxHighlighting = true;
     treesitter.context.enable = true;
@@ -55,6 +59,25 @@
               on_attach = default_on_attach;
             }
           '';
+          kotlin_language_server = lib.mkForce ''
+            lspconfig.kotlin_language_server.setup {
+              capabilities = capabilities,
+              root_dir = lspconfig.util.root_pattern("build.gradle.kts", "settings.gradle.kts"),
+              on_attach = default_on_attach,
+              cmd = {"${pkgs.kotlin-language-server}/bin/kotlin-language-server"},
+              init_options = {
+                storagePath = vim.fn.stdpath('state') .. '/kotlin',
+              },
+              settings = {
+                kotlin = {
+                  externalSources = {
+                    useKlsScheme = true,
+                    autoConvertToKotlin = true
+                  }
+                }
+              },
+            }
+          '';
         };
       };
     };
@@ -72,7 +95,10 @@
       haskell.enable = true;
       html.enable = true;
       java.enable = true;
-      kotlin.enable = true;
+      kotlin = {
+        enable = true;
+        extraDiagnostics.enable = false; # Using ktfmt
+      };
       lua.enable = true;
       markdown.enable = true;
       nix.enable = true;
@@ -86,6 +112,40 @@
       ts.enable = true;
       yaml.enable = true;
       zig.enable = true;
+    };
+
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts = {
+        formatters_by_ft.kotlin = ["ktfmt"];
+        formatters.ktfmt = {
+          command = "${pkgs.ktfmt}/bin/ktfmt";
+          args = ["$FILENAME"];
+          stdin = false;
+        };
+      };
+    };
+
+    diagnostics.nvim-lint = {
+      enable = true;
+      linters_by_ft.kotlin = ["detekt"];
+      linters.detekt = {
+        cmd = "${pkgs.detekt}/bin/detekt";
+        args = [
+          "--input"
+          "%filepath"
+          "--report"
+          "plain:stdout"
+        ];
+        ignore_exitcode = true;
+        parser = lib.generators.mkLuaInline ''
+          require('lint.parser').from_pattern(
+            '(.+):(%d+):(%d+): (.+): (.+)',
+            { 'file', 'lnum', 'col', 'severity', 'message' },
+            { error = 'error', warning = 'warn', info = 'info' }
+          )
+        '';
+      };
     };
 
     pluginRC.nix = ''

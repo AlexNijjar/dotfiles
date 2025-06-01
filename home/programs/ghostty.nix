@@ -20,6 +20,7 @@
         "ctrl+shift+]=next_tab"
         "ctrl+t=new_tab"
         "ctrl+q=close_tab"
+        "ctrl+enter=ignore"
       ];
     };
   };

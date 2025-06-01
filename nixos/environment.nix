@@ -36,6 +36,8 @@
         modrinth-app
         dua
         gradle
+        socat
+        detekt
       ]
       ++ (let
         vmopts = ''
@@ -52,7 +54,7 @@
     variables = {
       EDITOR = "nvim";
       TERMINAL = "ghostty";
-      LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib";
+      LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib:${pkgs.libglvnd}/lib";
     };
 
     sessionVariables = {
@@ -82,6 +84,7 @@
       libdrm
       libgbm
       libGL
+      libglvnd
       libvdpau
       libxkbcommon
       mesa

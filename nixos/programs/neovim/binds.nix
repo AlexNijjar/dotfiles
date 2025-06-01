@@ -20,34 +20,6 @@
         desc = "Yank with CTRL+C";
       }
       {
-        key = "<C-n>";
-        mode = ["n"];
-        action = ":bnext<CR>";
-        noremap = true;
-        desc = "Next buffer";
-      }
-      {
-        key = "<A-]>";
-        mode = ["n"];
-        action = ":bnext<CR>";
-        noremap = true;
-        desc = "Next buffer";
-      }
-      {
-        key = "<C-p>";
-        mode = ["n"];
-        action = ":bprevious<CR>";
-        noremap = true;
-        desc = "Previous buffer";
-      }
-      {
-        key = "<A-[>";
-        mode = ["n"];
-        action = ":bprevious<CR>";
-        noremap = true;
-        desc = "Previous buffer";
-      }
-      {
         key = "<C-d>";
         mode = ["n"];
         action = "<C-d>zz";

@@ -45,13 +45,15 @@
               on_attach = default_on_attach;
             }
           '';
+          # SOURCE: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ty.lua
+          # TODO: Remove once lspconfig is updated
           ty = ''
             local configs = require 'lspconfig.configs'
             configs.ty = {
               default_config = {
                 cmd = {"ty", "server"};
                 filetypes = {"python"};
-                root_dir = lspconfig.util.root_pattern("pyproject.toml");
+                root_dir = lspconfig.util.root_pattern("ty.toml", "pyproject.toml", ".git");
               }
             }
             lspconfig.ty.setup {
@@ -59,23 +61,28 @@
               on_attach = default_on_attach;
             }
           '';
-          kotlin_language_server = lib.mkForce ''
-            lspconfig.kotlin_language_server.setup {
-              capabilities = capabilities,
-              root_dir = lspconfig.util.root_pattern("build.gradle.kts", "settings.gradle.kts"),
-              on_attach = default_on_attach,
-              cmd = {"${pkgs.kotlin-language-server}/bin/kotlin-language-server"},
-              init_options = {
-                storagePath = vim.fn.stdpath('state') .. '/kotlin',
-              },
-              settings = {
-                kotlin = {
-                  externalSources = {
-                    useKlsScheme = true,
-                    autoConvertToKotlin = true
-                  }
-                }
-              },
+          # SOURCE: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/kotlin_lsp.lua
+          # TODO: Remove once lspconfig is updated
+          # TODO: Remove hardcoded path when nixpkgs adds kotlin-lsp
+          kotlin_lsp = ''
+            local configs = require 'lspconfig.configs'
+            configs.kotlin_lsp = {
+              default_config = {
+                filetypes = { 'kotlin' },
+                cmd = { '/home/alex/Downloads/kotlin-lsp.sh', '--stdio' },
+                root_dir = lspconfig.util.root_pattern(
+                  'build.gradle',
+                  'build.gradle.kts',
+                  'settings.gradle',
+                  'settings.gradle.kts',
+                  'pom.xml',
+                  'workspace.json'
+                ),
+              }
+            }
+            lspconfig.kotlin_lsp.setup {
+              capabilities = capabilities;
+              on_attach = default_on_attach;
             }
           '';
         };
@@ -97,6 +104,7 @@
       java.enable = true;
       kotlin = {
         enable = true;
+        lsp.enable = false; # Using kotlin-lsp
         extraDiagnostics.enable = false; # Using ktfmt
       };
       lua.enable = true;
@@ -150,7 +158,7 @@
 
     pluginRC.nix = ''
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = "nix,json,yaml,javascript,typescript",
+        pattern = "nix,json,yaml,javascript,typescript,sh",
         callback = function(opts)
           local bo = vim.bo[opts.buf]
           bo.tabstop = 2

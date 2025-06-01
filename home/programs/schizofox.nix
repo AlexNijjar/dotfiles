@@ -32,6 +32,7 @@
       "mousewheel.with_control.action" = 0;
       "browser.fullscreen.autohide" = false;
       "ui.key.menuAccessKeyFocuses" = false;
+      "ui.key.menuAccessKey" = 0;
     };
 
     security = {

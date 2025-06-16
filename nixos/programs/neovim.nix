@@ -30,7 +30,12 @@
         scroll = 0;
       };
 
-      assistant.copilot.enable = true;
+      assistant.copilot = {
+        enable = true;
+        setupOpts = {
+          suggestion. auto_trigger = true;
+        };
+      };
 
       telescope = {
         enable = true;

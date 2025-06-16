@@ -9,7 +9,7 @@
     '';
 
     shellAliases = {
-      nixos-rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
+      switch = "sudo nixos-rebuild switch --flake ~/dotfiles";
     };
 
     autosuggestion = {

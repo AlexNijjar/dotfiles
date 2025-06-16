@@ -19,5 +19,6 @@
         thunar-volman
       ];
     };
+    zsh.enable = true;
   };
 }

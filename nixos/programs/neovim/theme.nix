@@ -1,6 +1,6 @@
 {
   programs.nvf.settings.vim = {
-    lineNumberMode = "relative";
+    lineNumberMode = "relNumber";
 
     statusline = {
       lualine = {

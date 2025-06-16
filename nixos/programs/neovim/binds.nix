@@ -54,13 +54,6 @@
         noremap = true;
         desc = "Go to end of file";
       }
-      {
-        key = "<leader>ct";
-        mode = ["n"];
-        action = ":Copilot toggle<CR>";
-        noremap = true;
-        desc = "Fuck off copilot";
-      }
     ];
   };
 }

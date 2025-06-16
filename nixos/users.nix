@@ -20,7 +20,7 @@
       hashedPasswordFile = config.sops.secrets.user_password.path;
     };
     users.root.hashedPasswordFile = config.sops.secrets.root_password.path;
-    defaultUserShell = pkgs.nushell;
+    defaultUserShell = pkgs.zsh;
     mutableUsers = false;
   };
 }

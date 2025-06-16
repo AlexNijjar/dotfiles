@@ -1,7 +1,7 @@
 {
   programs.yazi = {
     enable = true;
-    enableNushellIntegration = true;
+    enableZshIntegration = true;
     settings = {
       yazi = {
         sort_dir_first = true;

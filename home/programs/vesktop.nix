@@ -47,6 +47,10 @@
           showIcon = true;
         };
         spotifyControls.enable = true;
+        translate = {
+          enable = true;
+          showChatBarButton = false;
+        };
         typingIndicator.enable = true;
         unindent.enable = true;
         userVoiceShow.enable = true;

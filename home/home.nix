@@ -6,7 +6,6 @@
     ./programs/hyprland.nix
     ./programs/lutris.nix
     ./programs/mpd.nix
-    ./programs/nushell.nix
     ./programs/schizofox.nix
     ./programs/spotify-player.nix
     ./programs/ssh.nix
@@ -15,6 +14,7 @@
     ./programs/vesktop.nix
     ./programs/waybar.nix
     ./programs/yazi.nix
+    ./programs/zsh.nix
   ];
 
   home.stateVersion = "24.11";
@@ -32,15 +32,7 @@
     uv.enable = true;
     carapace = {
       enable = true;
-      enableNushellIntegration = true;
-    };
-    pay-respects = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-    zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
+      enableZshIntegration = true;
     };
   };
 

@@ -35,15 +35,25 @@
             nixpkgs = {
               config.allowUnfree = true;
             };
+            nixpkgs.overlays = [
+              # TODO: Remove when nix-pkgs fixes deno
+              (final: prev: {
+                deno = prev.deno.overrideAttrs (oldAttrs: {
+                  doCheck = false;
+                });
+              })
+            ];
           }
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.users.alex.imports = [./home/home.nix];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {inherit inputs;};
+              users.alex.imports = [./home/home.nix];
+            };
           }
           sops-nix.nixosModules.sops
           catppuccin.nixosModules.catppuccin

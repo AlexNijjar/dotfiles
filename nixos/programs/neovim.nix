@@ -30,10 +30,7 @@
         scroll = 0;
       };
 
-      assistant.copilot = {
-        enable = true;
-        cmp.enable = true;
-      };
+      assistant.copilot.enable = true;
 
       telescope = {
         enable = true;

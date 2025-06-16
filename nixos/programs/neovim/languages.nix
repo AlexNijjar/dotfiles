@@ -27,7 +27,7 @@
 
     diagnostics = {
       enable = true;
-      config.virtual_lines = true;
+      config.virtual_text = true;
     };
 
     lsp = {
@@ -158,7 +158,7 @@
 
     pluginRC.nix = ''
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = "nix,json,yaml,javascript,typescript,sh",
+        pattern = "nix,json,yaml,javascript,typescript,sh,kt,kts",
         callback = function(opts)
           local bo = vim.bo[opts.buf]
           bo.tabstop = 2

@@ -1,6 +1,5 @@
 {
   imports = [
-    ./hyprland/animations.nix
     ./hyprland/binds.nix
     ./hyprland/decoration.nix
     ./hyprland/hyprpaper.nix
@@ -19,6 +18,8 @@
       "$base" = "rgb(1e1e2e)";
 
       "$scale" = "1.25";
+
+      animations.enabled = false;
 
       monitor = [", highres, auto, $scale"];
 

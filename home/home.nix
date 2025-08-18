@@ -34,6 +34,7 @@
       enable = true;
       enableZshIntegration = true;
     };
+    pgcli.enable = true;
   };
 
   services = {

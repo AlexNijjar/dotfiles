@@ -12,7 +12,7 @@
 
     spellcheck = {
       enable = true;
-      programmingWordlist.enable = true;
+      # programmingWordlist.enable = true;
       extraSpellWords = {
         "en.utf-8" = [
           "nijjar"

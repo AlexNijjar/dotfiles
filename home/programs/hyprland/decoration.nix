@@ -14,12 +14,11 @@
 
     blur = {
       enabled = true;
-      size = 5;
-      passes = 2;
-      brightness = 0.85;
-      contrast = 0.85;
+      size = 4;
+      passes = 1;
+      brightness = 0.9;
+      contrast = 0.9;
       vibrancy = 0.1;
-      xray = true;
     };
   };
 }

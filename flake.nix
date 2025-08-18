@@ -35,14 +35,6 @@
             nixpkgs = {
               config.allowUnfree = true;
             };
-            nixpkgs.overlays = [
-              # TODO: Remove when nix-pkgs fixes deno
-              (final: prev: {
-                deno = prev.deno.overrideAttrs (oldAttrs: {
-                  doCheck = false;
-                });
-              })
-            ];
           }
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager

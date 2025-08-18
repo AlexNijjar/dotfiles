@@ -1,5 +1,7 @@
 {
   security = {
+    rtkit.enable = true;
+
     sudo.extraConfig = ''
       Defaults timestamp_timeout=60
       Defaults timestamp_type=global

@@ -6,7 +6,7 @@
     settings = {
       theme = "catppuccin-mocha";
       font-size = 13;
-      background-opacity = 0.95;
+      background-opacity = 0;
       clipboard-paste-protection = false;
       confirm-close-surface = false;
       gtk-tabs-location = "hidden";
@@ -22,6 +22,10 @@
         "ctrl+t=new_tab"
         "ctrl+q=close_tab"
         "ctrl+enter=ignore"
+
+        # TODO add when ghostty supports performable with scrolling https://github.com/ghostty-org/ghostty/issues/6765
+        # "performable:ctrl+d=scroll_page_lines:15"
+        # "performable:ctrl+u=scroll_page_lines:-15"
       ];
     };
   };

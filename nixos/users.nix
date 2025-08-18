@@ -14,6 +14,7 @@
     users.alex = {
       isNormalUser = true;
       extraGroups = ["wheel"];
+      linger = true;
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIdZWguoU6C7AIsM4+DDVx5RnjCdZ6xY0yhgkMZyAOBT alexander.nijjar@icloud.com"
       ];

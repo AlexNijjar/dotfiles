@@ -33,9 +33,11 @@
     };
 
     logind = {
-      extraConfig = ''
-        HandlePowerKey=suspend
-      '';
+      settings = {
+        Login = {
+          HandlePowerKey = "suspend";
+        };
+      };
     };
 
     udev.packages = with pkgs; [

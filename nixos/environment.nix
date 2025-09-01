@@ -8,7 +8,7 @@
         rocmPackages.amdsmi
         rocmPackages.rocm-smi
         rocmPackages.rocminfo
-        stremio
+        file
         via
         krabby
         pavucontrol
@@ -39,10 +39,8 @@
         gradle
         socat
         detekt
-        patchelf
-        ccache
-        zlib
         blockbench
+        dash
       ]
       ++ (let
         vmopts = ''
@@ -50,7 +48,7 @@
           -Xmx8G
         '';
       in [
-        (jetbrains.idea-ultimate.override {vmopts = vmopts;})
+        (jetbrains.idea-ultimate.override {inherit vmopts;})
         jetbrains.jdk
       ]);
 
@@ -79,12 +77,29 @@
 
       VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
       VK_LAYER_PATH = "/run/opengl-driver/share/vulkan/explicit_layer.d";
+      LIBGL_DRIVERS_PATH = "/run/opengl-driver/lib";
+
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_STATE_HOME = "$HOME/.local/state";
+
+      CARGO_HOME = "$XDG_DATA_HOME/cargo";
+      GRADLE_USER_HOME = "$XDG_DATA_HOME/gradle";
+      RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
+      BUN_INSTALL_CACHE_DIR = "$XDG_CACHE_HOME/bun";
+      BUN_RUNTIME_TRANSPILER_CACHE_PATH = "$XDG_CACHE_HOME/bun/transpiler";
     };
+
+    binsh = "${pkgs.dash}/bin/dash";
   };
 
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
+      rocmPackages.clr
+      rocmPackages.hipblas
+      rocmPackages.rocblas
       glibc
       gcc-unwrapped.lib
       stdenv.cc.cc.lib

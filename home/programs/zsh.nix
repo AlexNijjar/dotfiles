@@ -28,6 +28,7 @@
 
     history = {
       size = 50000;
+      path = "$XDG_STATE_HOME/zsh/history";
       ignoreDups = true;
       ignoreAllDups = true;
       saveNoDups = true;

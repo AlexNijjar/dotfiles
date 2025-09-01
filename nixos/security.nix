@@ -2,15 +2,15 @@
   security = {
     rtkit.enable = true;
 
-    sudo.extraConfig = ''
-      Defaults timestamp_timeout=60
-      Defaults timestamp_type=global
-    '';
-
-    pam.services = {
-      greetd.enableGnomeKeyring = true;
-      hyprlock = {};
+    sudo.enable = false;
+    sudo-rs = {
+      enable = true;
+      extraConfig = ''
+        Defaults timestamp_timeout=60
+      '';
     };
+
+    pam.services.hyprlock = {};
 
     polkit = {
       enable = true;

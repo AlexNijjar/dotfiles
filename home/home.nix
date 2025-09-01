@@ -5,13 +5,12 @@
     ./programs/git.nix
     ./programs/hyprland.nix
     ./programs/lutris.nix
-    ./programs/mpd.nix
     ./programs/schizofox.nix
     ./programs/spotify-player.nix
     ./programs/ssh.nix
     ./programs/starship.nix
-    ./programs/thunderbird.nix
     ./programs/vesktop.nix
+    ./programs/walker.nix
     ./programs/waybar.nix
     ./programs/yazi.nix
     ./programs/zsh.nix
@@ -23,7 +22,6 @@
     btop.enable = true;
     cava.enable = true;
     fastfetch.enable = true;
-    obs-studio.enable = true;
     imv.enable = true;
     zathura.enable = true;
     ripgrep.enable = true;
@@ -45,8 +43,6 @@
     podman.enable = true;
     swayosd.enable = true;
   };
-
-  xdg.userDirs.enable = true;
 
   programs.ruff = {
     enable = true;

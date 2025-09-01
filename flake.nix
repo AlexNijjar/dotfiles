@@ -17,7 +17,6 @@
       url = "github:gerg-l/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    walker.url = "github:abenz1267/walker";
     catppuccin.url = "github:catppuccin/nix";
     sops-nix.url = "github:Mic92/sops-nix";
     schizofox.url = "github:schizofox/schizofox";

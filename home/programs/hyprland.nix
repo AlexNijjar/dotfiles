@@ -51,6 +51,8 @@
 
       input = {
         kb_layout = "us";
+        repeat_delay = 250;
+        repeat_rate = 30;
       };
     };
   };

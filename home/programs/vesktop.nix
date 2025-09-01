@@ -30,6 +30,7 @@
         messageLatency.enable = true;
         messageLinkEmbeds.enable = true;
         messageLogger.enable = true;
+        newGuildSettings.enable = true;
         noReplyMention.enable = true;
         permissionFreeWill.enable = true;
         permissionsViewer.enable = true;
@@ -46,7 +47,6 @@
           enable = true;
           showIcon = true;
         };
-        spotifyControls.enable = true;
         translate = {
           enable = true;
           showChatBarButton = false;

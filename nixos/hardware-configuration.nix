@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [
@@ -23,4 +24,8 @@
     enable = true;
     ppfeaturemask = "0xffffffff";
   };
+
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
 }

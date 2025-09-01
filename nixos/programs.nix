@@ -4,7 +4,6 @@
     ./programs/spicetify.nix
     ./programs/steam.nix
     ./programs/sunshine.nix
-    ./programs/walker.nix
   ];
   programs = {
     corectrl.enable = true;

@@ -32,6 +32,7 @@
       "browser.fullscreen.autohide" = false;
       "ui.key.menuAccessKeyFocuses" = false;
       "ui.key.menuAccessKey" = 0;
+      "browser.tabs.allowTabDetach" = false;
     };
 
     security = {

@@ -33,7 +33,7 @@
       assistant.copilot = {
         enable = true;
         setupOpts = {
-          suggestion. auto_trigger = true;
+          suggestion.auto_trigger = true;
         };
       };
 
@@ -62,12 +62,9 @@
 
       utility = {
         vim-wakatime.enable = true;
-        multicursors.enable = true;
         yazi-nvim.enable = true;
         diffview-nvim.enable = true;
       };
-
-      navigation.harpoon.enable = true;
 
       projects.project-nvim = {
         enable = true;

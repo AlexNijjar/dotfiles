@@ -1,8 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.walker.nixosModules.default];
-
+{
   # Modified theme of: https://github.com/maotseantonio/NixOS-Hyprland/blob/main/configs/walker/themes/catppuccin.css
-  programs.walker = {
+  services.walker = {
     enable = true;
     theme = {
       layout = {

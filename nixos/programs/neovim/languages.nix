@@ -34,7 +34,12 @@
       formatOnSave = true;
       inlayHints.enable = true;
       lspSignature.enable = true;
-      trouble.enable = true;
+      mappings = {
+        listReferences = null;
+        goToDefinition = null;
+        listImplementations = null;
+        goToType = null;
+      };
       lspconfig = {
         enable = true;
         sources = {

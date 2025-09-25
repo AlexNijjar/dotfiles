@@ -23,6 +23,7 @@
     cava.enable = true;
     fastfetch.enable = true;
     imv.enable = true;
+    mpv.enable = true;
     zathura.enable = true;
     ripgrep.enable = true;
     fd.enable = true;
@@ -38,7 +39,7 @@
   services = {
     mako = {
       enable = true;
-      settings.defaultTimeout = "5000";
+      settings.default-timeout = 5000;
     };
     podman.enable = true;
     swayosd.enable = true;

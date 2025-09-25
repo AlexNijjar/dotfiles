@@ -41,6 +41,10 @@
         detekt
         blockbench
         dash
+        moonlight-qt
+        ffmpeg
+        wf-recorder
+        libnotify
       ]
       ++ (let
         vmopts = ''

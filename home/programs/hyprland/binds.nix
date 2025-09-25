@@ -3,8 +3,9 @@
     "$mod" = "SUPER";
     bind =
       [
-        "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png')"
-        "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png')"
+        "$mod, S, exec, mkdir ~/screenshots; grim ~/screenshots/$(date +'%s_grim.png') && notify-send 'Screenshot Saved' -t 2000"
+        "$mod_SHIFT, S, exec, mkdir ~/screenshots; grim -g \"$(slurp)\" ~/screenshots/$(date +'%s_grim.png') && notify-send 'Screenshot Saved' -t 2000"
+        "$mod, R, exec, sh -c 'if pkill wf-recorder; then notify-send \"Recording Saved\" -t 2000; else mkdir -p ~/videos && wf-recorder --audio=$(wpctl inspect @DEFAULT_AUDIO_SINK@ | grep \"node.name\" | cut -d\"\\\"\" -f4).monitor -f ~/videos/$(date +\"%s_recording.mp4\") & notify-send \"Recording Started\" -t 2000; fi'"
         "$mod, Q, killactive"
         "$mod, DELETE, exec, hyprlock"
         "$mod, DELETE_SHIFT, exit"

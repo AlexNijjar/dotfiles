@@ -19,7 +19,7 @@
         copyUserURLs.enable = true;
         decor.enable = true;
         disableCallIdle.enable = true;
-        emoteCloner.enable = true;
+        expressionCloner.enable = true;
         forceOwnerCrown.enable = true;
         friendsSince.enable = true;
         fullSearchContext.enable = true;

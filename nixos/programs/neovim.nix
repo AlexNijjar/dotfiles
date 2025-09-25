@@ -56,6 +56,14 @@
             "--hidden"
           ];
         };
+        mappings = {
+          lspReferences = "<leader>lgr";
+          lspDefinitions = "<leader>lgd";
+          lspImplementations = "<leader>lgi";
+          lspTypeDefinitions = "<leader>lgt";
+          gitStatus = "<leader>gd";
+          diagnostics = "<leader>ld";
+        };
       };
 
       notify.nvim-notify.enable = true;
@@ -63,7 +71,6 @@
       utility = {
         vim-wakatime.enable = true;
         yazi-nvim.enable = true;
-        diffview-nvim.enable = true;
       };
 
       projects.project-nvim = {

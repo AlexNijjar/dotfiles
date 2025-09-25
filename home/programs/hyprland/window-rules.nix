@@ -14,6 +14,7 @@
     "opacity 0.9,title:^(Lutris)$"
 
     "float,class:^(imv)$"
+    "float,class:^(mpv)$"
 
     "float,title:^(Picture-in-Picture)$"
     "pin,title:^(Picture-in-Picture)$"

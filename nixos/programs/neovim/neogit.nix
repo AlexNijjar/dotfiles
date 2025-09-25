@@ -39,12 +39,6 @@
         desc = "Branch";
       }
       {
-        key = "<leader>gd";
-        mode = ["n"];
-        action = ":Neogit diff<CR>";
-        desc = "Diff";
-      }
-      {
         key = "<leader>gm";
         mode = ["n"];
         action = ":Neogit merge<CR>";

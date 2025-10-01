@@ -41,7 +41,6 @@
       enable = true;
       settings.default-timeout = 5000;
     };
-    podman.enable = true;
     swayosd.enable = true;
   };
 

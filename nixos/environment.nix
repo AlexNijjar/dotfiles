@@ -45,6 +45,8 @@
         ffmpeg
         wf-recorder
         libnotify
+        podman-compose
+        bluetuith
       ]
       ++ (let
         vmopts = ''

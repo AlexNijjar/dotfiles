@@ -44,4 +44,8 @@
       via
     ];
   };
+
+  virtualisation = {
+    podman.enable = true;
+  };
 }

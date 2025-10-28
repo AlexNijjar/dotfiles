@@ -47,6 +47,7 @@
         libnotify
         podman-compose
         bluetuith
+        qbittorrent
       ]
       ++ (let
         vmopts = ''

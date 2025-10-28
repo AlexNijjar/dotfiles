@@ -18,6 +18,7 @@
       viAlias = true;
       vimAlias = true;
       searchCase = "smart";
+      enableLuaLoader = true;
 
       options = {
         autoindent = true;
@@ -30,10 +31,16 @@
         scroll = 0;
       };
 
+      undoFile.enable = true;
+
       assistant.copilot = {
         enable = true;
         setupOpts = {
           suggestion.auto_trigger = true;
+          filetypes = {
+            markdown = true;
+            yaml = true;
+          };
         };
       };
 
@@ -71,6 +78,7 @@
       utility = {
         vim-wakatime.enable = true;
         yazi-nvim.enable = true;
+        mkdir.enable = true;
       };
 
       projects.project-nvim = {

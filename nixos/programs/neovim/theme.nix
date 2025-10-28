@@ -2,12 +2,7 @@
   programs.nvf.settings.vim = {
     lineNumberMode = "relNumber";
 
-    statusline = {
-      lualine = {
-        enable = true;
-        theme = "catppuccin";
-      };
-    };
+    statusline.lualine.enable = true;
 
     theme = {
       enable = true;

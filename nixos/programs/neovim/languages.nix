@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   programs.nvf.settings.vim = {
     syntaxHighlighting = true;
     treesitter.context.enable = true;
@@ -10,19 +6,7 @@
     autopairs.nvim-autopairs.enable = true;
     comments.comment-nvim.enable = true;
 
-    spellcheck = {
-      enable = true;
-      extraSpellWords = {
-        "en.utf-8" = [
-          "nijjar"
-          "wai"
-          "w_ai"
-          "gpu"
-          "gpus"
-          "adastra"
-        ];
-      };
-    };
+    spellcheck.enable = true;
 
     diagnostics = {
       enable = true;
@@ -34,61 +18,62 @@
       formatOnSave = true;
       inlayHints.enable = true;
       lspSignature.enable = true;
-      mappings = {
-        listReferences = null;
-        goToDefinition = null;
-        listImplementations = null;
-        goToType = null;
-      };
-      lspconfig = {
-        enable = true;
-        sources = {
-          ruff = ''
-            lspconfig.ruff.setup {
-              capabilities = capabilities;
-              on_attach = default_on_attach;
-            }
-          '';
-          # SOURCE: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ty.lua
-          # TODO: Remove once lspconfig is updated
-          ty = ''
-            local configs = require 'lspconfig.configs'
-            configs.ty = {
-              default_config = {
-                cmd = {"ty", "server"};
-                filetypes = {"python"};
-                root_dir = lspconfig.util.root_pattern("ty.toml", "pyproject.toml", ".git");
-              }
-            }
-            lspconfig.ty.setup {
-              capabilities = capabilities;
-              on_attach = default_on_attach;
-            }
-          '';
-          # SOURCE: https://github.com/neovim/nvim-lspconfig/blob/master/lsp/kotlin_lsp.lua
-          # TODO: Remove once lspconfig is updated
-          # TODO: Remove hardcoded path when nixpkgs adds kotlin-lsp
-          kotlin_lsp = ''
-            local configs = require 'lspconfig.configs'
-            configs.kotlin_lsp = {
-              default_config = {
-                filetypes = { 'kotlin' },
-                cmd = { '/home/alex/Downloads/kotlin-lsp.sh', '--stdio' },
-                root_dir = lspconfig.util.root_pattern(
-                  'build.gradle',
-                  'build.gradle.kts',
-                  'settings.gradle',
-                  'settings.gradle.kts',
-                  'pom.xml',
-                  'workspace.json'
-                ),
-              }
-            }
-            lspconfig.kotlin_lsp.setup {
-              capabilities = capabilities;
-              on_attach = default_on_attach;
-            }
-          '';
+      mappings.listReferences = null;
+
+      servers = {
+        ruff = {
+          enable = true;
+          cmd = ["${pkgs.ruff}/bin/ruff" "server"];
+          filetypes = ["python"];
+          root_markers = ["pyproject.toml" "ruff.toml" ".ruff.toml" ".git"];
+        };
+
+        ty = {
+          enable = true;
+          cmd = ["${pkgs.ty}/bin/ty" "server"];
+          filetypes = ["python"];
+          root_markers = ["ty.toml" "pyproject.toml" ".git"];
+        };
+
+        ts_ls = {
+          settings = {
+            typescript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all";
+                includeInlayEnumMemberValueHints = true;
+              };
+            };
+            javascript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all";
+                includeInlayEnumMemberValueHints = true;
+              };
+            };
+          };
+        };
+
+        docker_language_server = {
+          enable = true;
+          cmd = ["${pkgs.docker-language-server}/bin/docker-language-server" "start" "--stdio"];
+          filetypes = ["dockerfile" "yaml.docker-compose"];
+          root_markers = [
+            "Dockerfile"
+            "docker-compose.yaml"
+            "docker-compose.yml"
+            "compose.yaml"
+            "compose.yml"
+            "docker-bake.json"
+            "docker-bake.hcl"
+            "docker-bake.override.json"
+            "docker-bake.override.hcl"
+          ];
+        };
+
+        tombi = {
+          enable = true;
+          cmd = ["${pkgs.tombi}/bin/tombi" "lsp"];
+          filetypes = ["toml"];
+          root_markers = ["tombi.toml" "pyproject.toml" ".git"];
         };
       };
     };
@@ -98,21 +83,24 @@
       enableFormat = true;
       enableExtraDiagnostics = true;
 
-      assembly.enable = true;
       bash.enable = true;
-      clang.enable = true;
-      css.enable = true;
-      go.enable = true;
-      haskell.enable = true;
+      css = {
+        enable = true;
+        format.type = "biome";
+      };
       html.enable = true;
       java.enable = true;
       kotlin = {
         enable = true;
-        lsp.enable = false; # Using kotlin-lsp
-        extraDiagnostics.enable = false; # Using ktfmt
+        lsp.enable = false;
+        extraDiagnostics.enable = false;
       };
       lua.enable = true;
-      markdown.enable = true;
+      markdown = {
+        enable = true;
+        lsp.servers = ["markdown-oxide"];
+        extensions.render-markdown-nvim.enable = true;
+      };
       nix.enable = true;
       python = {
         enable = true;
@@ -121,42 +109,31 @@
       };
       rust.enable = true;
       sql.enable = true;
-      ts.enable = true;
+      ts = {
+        enable = true;
+        format.type = "biome";
+      };
       yaml.enable = true;
-      zig.enable = true;
+      json.enable = true;
     };
 
     formatter.conform-nvim = {
       enable = true;
       setupOpts = {
-        formatters_by_ft.kotlin = ["ktfmt"];
-        formatters.ktfmt = {
-          command = "${pkgs.ktfmt}/bin/ktfmt";
-          args = ["$FILENAME"];
-          stdin = false;
+        formatters_by_ft = {
+          kotlin = ["ktfmt"];
+          dockerfile = ["dockerfmt"];
         };
-      };
-    };
-
-    diagnostics.nvim-lint = {
-      enable = true;
-      linters_by_ft.kotlin = ["detekt"];
-      linters.detekt = {
-        cmd = "${pkgs.detekt}/bin/detekt";
-        args = [
-          "--input"
-          "%filepath"
-          "--report"
-          "plain:stdout"
-        ];
-        ignore_exitcode = true;
-        parser = lib.generators.mkLuaInline ''
-          require('lint.parser').from_pattern(
-            '(.+):(%d+):(%d+): (.+): (.+)',
-            { 'file', 'lnum', 'col', 'severity', 'message' },
-            { error = 'error', warning = 'warn', info = 'info' }
-          )
-        '';
+        formatters = {
+          ktfmt = {
+            command = "${pkgs.ktfmt}/bin/ktfmt";
+            args = ["$FILENAME"];
+            stdin = false;
+          };
+          dockerfmt = {
+            command = "${pkgs.dockerfmt}/bin/dockerfmt";
+          };
+        };
       };
     };
 

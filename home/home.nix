@@ -34,6 +34,11 @@
       enableZshIntegration = true;
     };
     pgcli.enable = true;
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+      daemon.enable = true;
+    };
   };
 
   services = {

@@ -1,8 +1,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "Alex Nijjar";
-    userEmail = "alexander.nijjar@icloud.com";
+    settings.user = {
+      name = "Alex Nijjar";
+      email = "alexander.nijjar@icloud.com";
+    };
     signing = {
       signByDefault = true;
       format = "ssh";

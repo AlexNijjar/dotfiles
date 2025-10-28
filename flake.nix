@@ -21,7 +21,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     schizofox.url = "github:schizofox/schizofox";
     wallpkgs.url = "github:NotAShelf/wallpkgs";
-    nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:NotAShelf/nvf/v0.8";
   };
 
   outputs = inputs:

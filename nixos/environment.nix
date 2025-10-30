@@ -34,6 +34,7 @@
         speedtest-cli
         gh
         ty
+        biome
         modrinth-app
         dua
         gradle

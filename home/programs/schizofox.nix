@@ -18,7 +18,7 @@
     search = {
       defaultSearchEngine = "Searx";
       removeEngines = ["DuckDuckGo" "Bing" "Amazon.com" "eBay" "Twitter" "Wikipedia"];
-      searxQuery = "https://search.notashelf.dev/search?q={searchTerms}";
+      searxQuery = "https://search.femboy.ad/search?q={searchTerms}";
     };
 
     settings = {

@@ -11,9 +11,11 @@
       confirm-close-surface = false;
       gtk-tabs-location = "hidden";
       window-inherit-working-directory = true;
+      window-save-state = "always";
+      working-directory = "home";
       keybind = [
         "performable:ctrl+c=copy_to_clipboard"
-        "ctrl+v=paste_from_clipboard"
+        "performable:ctrl+v=paste_from_clipboard"
         "ctrl+a=select_all"
         "ctrl+k=clear_screen"
         "ctrl+l=clear_screen"

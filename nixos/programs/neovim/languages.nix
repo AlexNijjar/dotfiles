@@ -2,6 +2,23 @@
   programs.nvf.settings.vim = {
     syntaxHighlighting = true;
     treesitter.context.enable = true;
+    treesitter.textobjects = {
+      enable = true;
+      setupOpts = {
+        select = {
+          enable = true;
+          lookahead = true;
+          keymaps = {
+            "af" = "@function.outer";
+            "if" = "@function.inner";
+            "ac" = "@class.outer";
+            "ic" = "@class.inner";
+            "aa" = "@assignment.outer";
+            "ia" = "@assignment.inner";
+          };
+        };
+      };
+    };
     autocomplete.nvim-cmp.enable = true;
     autopairs.nvim-autopairs.enable = true;
     comments.comment-nvim.enable = true;
@@ -50,6 +67,34 @@
               };
             };
           };
+        };
+
+        biome = {
+          enable = true;
+          cmd = ["${pkgs.biome}/bin/biome" "lsp-proxy"];
+          filetypes = [
+            "astro"
+            "css"
+            "graphql"
+            "html"
+            "javascript"
+            "javascriptreact"
+            "json"
+            "jsonc"
+            "svelte"
+            "typescript"
+            "typescript.tsx"
+            "typescriptreact"
+            "vue"
+          ];
+          root_markers = [
+            "package-lock.json"
+            "yarn.lock"
+            "pnpm-lock.yaml"
+            "bun.lockb"
+            "bun.lock"
+            ".git"
+          ];
         };
 
         docker_language_server = {
@@ -108,10 +153,14 @@
         format.type = "ruff";
       };
       rust.enable = true;
-      sql.enable = true;
+      sql = {
+        enable = false; # busted atm
+        dialect = "postgres";
+      };
       ts = {
         enable = true;
         format.type = "biome";
+        extraDiagnostics.enable = false; # Not using eslint
       };
       yaml.enable = true;
       json.enable = true;
@@ -121,6 +170,13 @@
       enable = true;
       setupOpts = {
         formatters_by_ft = {
+          javascript = ["biome" "biome-organize-imports"];
+          javascriptreact = ["biome" "biome-organize-imports"];
+          typescript = ["biome" "biome-organize-imports"];
+          typescriptreact = ["biome" "biome-organize-imports"];
+          json = ["biome"];
+          jsonc = ["biome"];
+
           kotlin = ["ktfmt"];
           dockerfile = ["dockerfmt"];
         };

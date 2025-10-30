@@ -7,7 +7,6 @@
     inputs.nvf.nixosModules.default
     ./neovim/binds.nix
     ./neovim/languages.nix
-    ./neovim/neogit.nix
     ./neovim/theme.nix
   ];
 
@@ -100,6 +99,12 @@
               virt_text_pos = "right_align";
               delay = 500;
             };
+          };
+        };
+        neogit = {
+          enable = true;
+          setupOpts = {
+            kind = "floating";
           };
         };
       };

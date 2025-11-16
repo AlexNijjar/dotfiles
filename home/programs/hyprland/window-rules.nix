@@ -6,11 +6,9 @@
     "workspace 1, title:^(spotify)$"
     "workspace 2, class:^(firefox)$"
 
-    "opacity 0.9,class:^(firefox)$fullscreen:0"
     "opacity 0.9,class:^(spotify)$"
     "opacity 0.9,class:^(thunar)$"
     "opacity 0.9,class:^(vesktop)$fullscreen:0"
-    "opacity 0.9,class:^(modrinth-app)$"
     "opacity 0.9,title:^(Lutris)$"
 
     "float,class:^(imv)$"

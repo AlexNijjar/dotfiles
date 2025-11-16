@@ -13,6 +13,40 @@
         foreground = "cdd6f4";
         primary = "cba6f7";
       };
+      extraUserChrome = ''
+        #main-window,
+        #navigator-toolbox,
+        #TabsToolbar,
+        #nav-bar,
+        #browser,
+        #content,
+        #tabbrowser-tabpanels,
+        browser[type="content-primary"],
+        html,
+        body {
+          background: transparent !important;
+        }
+
+        :root {
+          --in-content-page-background: transparent !important;
+          --toolbar-bgcolor: transparent !important;
+          --lwt-background-color: transparent !important;
+          --lwt-accent-color: transparent !important;
+        }
+      '';
+      extraUserContent = ''
+        @-moz-document url-prefix("about:"), url("about:blank"), url("about:newtab"), url("about:home") {
+          html, body {
+            background: transparent !important;
+          }
+
+          :root {
+            --in-content-page-background: transparent !important;
+            --newtab-background-color: transparent !important;
+            --newtab-background-color-secondary: transparent !important;
+          }
+        }
+      '';
     };
 
     search = {
@@ -32,6 +66,7 @@
       "ui.key.menuAccessKeyFocuses" = false;
       "ui.key.menuAccessKey" = 0;
       "browser.tabs.allowTabDetach" = false;
+      "browser.tabs.allow_transparent_browser" = true;
     };
 
     security = {

@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyprland.settings.windowrule = [
-    "suppressevent maximize, class:"
+    "suppressevent maximize, class:\"\""
 
     "workspace 1, title:^(vesktop)$"
     "workspace 1, title:^(spotify)$"

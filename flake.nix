@@ -44,6 +44,9 @@
               backupFileExtension = "backup";
               extraSpecialArgs = {inherit inputs;};
               users.alex.imports = [./home/home.nix];
+              sharedModules = [
+                sops-nix.homeManagerModules.sops
+              ];
             };
           }
           sops-nix.nixosModules.sops

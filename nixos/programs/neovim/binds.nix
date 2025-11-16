@@ -75,6 +75,20 @@
         noremap = true;
         desc = "Git merge [Neogit]";
       }
+      {
+        key = "<leader>w";
+        mode = ["n"];
+        action = "<Cmd>set wrap!<CR>";
+        noremap = true;
+        desc = "Toggle wrap";
+      }
+      {
+        key = "<F1>";
+        mode = ["n" "i" "v"];
+        action = "<Nop>";
+        noremap = true;
+        desc = "Disable F1 help";
+      }
     ];
   };
 }

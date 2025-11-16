@@ -4,8 +4,6 @@
       warn-dirty = false;
       auto-optimise-store = true;
       experimental-features = "nix-command flakes";
-      substituters = ["https://walker.cachix.org"];
-      trusted-public-keys = ["walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM="];
     };
     gc = {
       automatic = true;

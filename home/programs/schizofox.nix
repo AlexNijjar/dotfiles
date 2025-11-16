@@ -16,9 +16,8 @@
     };
 
     search = {
-      defaultSearchEngine = "Searx";
+      defaultSearchEngine = "Google";
       removeEngines = ["DuckDuckGo" "Bing" "Amazon.com" "eBay" "Twitter" "Wikipedia"];
-      searxQuery = "https://search.femboy.ad/search?q={searchTerms}";
     };
 
     settings = {

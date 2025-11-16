@@ -12,7 +12,7 @@
 
       modules-left = ["hyprland/workspaces" "hyprland/window"];
       modules-center = ["clock"];
-      modules-right = ["mpris" "cava" "wireplumber" "cpu" "memory" "custom/gpu" "custom/vram" "temperature" "disk" "tray"];
+      modules-right = ["custom/recording" "mpris" "cava" "wireplumber" "cpu" "memory" "custom/gpu" "custom/vram" "temperature" "disk" "tray"];
 
       "hyprland/workspaces" = {
         disable-scroll = true;
@@ -32,6 +32,20 @@
         format = "{:%I:%M:%S %p %b %d}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         interval = 1;
+      };
+
+      "custom/recording" = {
+        format = "{}";
+        interval = 1;
+        exec = pkgs.writeShellScript "recording-status" ''
+          #!/bin/sh
+          if pgrep -x wl-screenrec > /dev/null 2>&1; then
+            printf '{"text": "󰑊", "class": "recording", "tooltip": "Recording"}'
+          else
+            printf '{"text": "", "class": "not-recording"}'
+          fi
+        '';
+        return-type = "json";
       };
 
       mpris = {
@@ -170,6 +184,20 @@
 
       #window {
         margin-left: 1rem;
+      }
+
+      #custom-recording.recording {
+        color: #ff0000;
+        background-color: @surface0;
+        padding: 0.5rem 1rem;
+        margin: 2px 0px;
+        border-radius: 1rem;
+        margin-right: 1rem;
+      }
+
+      #custom-recording.not-recording {
+        padding: 0;
+        margin: 0;
       }
 
       #mpris {

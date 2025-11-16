@@ -1,64 +1,56 @@
 {pkgs, ...}: {
   environment = {
-    systemPackages = with pkgs;
-      [
-        tree
-        unzip
-        p7zip
-        rocmPackages.amdsmi
-        rocmPackages.rocm-smi
-        rocmPackages.rocminfo
-        file
-        via
-        krabby
-        pavucontrol
-        wl-clipboard
-        ffmpegthumbnailer
-        grim
-        slurp
-        xarchiver
-        gcc
-        cargo
-        nodejs_20
-        python3
-        jq
-        sops
-        openssl
-        openssl.dev
-        openssl.out
-        pkg-config
-        protobuf
-        rustfmt
-        clippy
-        unrar
-        speedtest-cli
-        gh
-        ty
-        biome
-        modrinth-app
-        dua
-        gradle
-        socat
-        detekt
-        blockbench
-        dash
-        moonlight-qt
-        ffmpeg
-        wf-recorder
-        libnotify
-        podman-compose
-        bluetuith
-        qbittorrent
-      ]
-      ++ (let
-        vmopts = ''
-          -Dawt.toolkit.name=WLToolkit
-          -Xmx8G
-        '';
-      in [
-        (jetbrains.idea-ultimate.override {inherit vmopts;})
-        jetbrains.jdk
-      ]);
+    systemPackages = with pkgs; [
+      tree
+      zip
+      unzip
+      p7zip
+      rocmPackages.amdsmi
+      rocmPackages.rocm-smi
+      rocmPackages.rocminfo
+      file
+      via
+      krabby
+      pavucontrol
+      wl-clipboard
+      ffmpegthumbnailer
+      grim
+      slurp
+      gcc
+      cargo
+      nodejs_20
+      python3
+      jq
+      sops
+      openssl
+      openssl.dev
+      openssl.out
+      pkg-config
+      protobuf
+      rustfmt
+      clippy
+      unrar
+      speedtest-cli
+      gh
+      ty
+      biome
+      prismlauncher
+      dua
+      gradle
+      socat
+      detekt
+      blockbench
+      dash
+      moonlight-qt
+      ffmpeg
+      wl-screenrec
+      libnotify
+      podman-compose
+      bluetuith
+      isync
+      ssh-to-age
+      qbittorrent
+    ];
 
     defaultPackages = [];
 

@@ -1,6 +1,7 @@
 {
   imports = [
     ./interface.nix
+    ./programs/aerc.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix
@@ -17,6 +18,19 @@
   ];
 
   home.stateVersion = "24.11";
+
+  sops = {
+    defaultSopsFile = ../secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age = {
+      keyFile = "/home/alex/.config/sops/age/keys.txt";
+      sshKeyPaths = [];
+    };
+
+    defaultSymlinkPath = "/run/user/1000/secrets";
+    defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+  };
 
   programs = {
     btop.enable = true;
@@ -38,6 +52,11 @@
       enable = true;
       enableZshIntegration = true;
       daemon.enable = true;
+    };
+    yt-dlp.enable = true;
+    skim = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 

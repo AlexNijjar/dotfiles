@@ -1,5 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.nixcord.homeModules.nixcord];
+{ inputs, ... }:
+{
+  imports = [ inputs.nixcord.homeModules.nixcord ];
   programs.nixcord = {
     enable = true;
     discord.enable = false;
@@ -16,7 +17,7 @@
         betterSessions.enable = true;
         callTimer.enable = true;
         copyFileContents.enable = true;
-        copyUserURLs.enable = true;
+        copyUserUrLs.enable = true;
         decor.enable = true;
         disableCallIdle.enable = true;
         expressionCloner.enable = true;
@@ -43,22 +44,21 @@
         showConnections.enable = true;
         showHiddenChannels.enable = true;
         showHiddenThings.enable = true;
-        silentTyping = {
-          enable = true;
-          showIcon = true;
-        };
+        silentTyping.enable = true;
         translate = {
           enable = true;
           showChatBarButton = false;
         };
         typingIndicator.enable = true;
         unindent.enable = true;
+        unsuppressEmbeds.enable = true;
         userVoiceShow.enable = true;
         validReply.enable = true;
         validUser.enable = true;
         viewIcons.enable = true;
         voiceChatDoubleClick.enable = true;
         volumeBooster.enable = true;
+        webScreenShareFixes.enable = true;
         whoReacted.enable = true;
       };
     };

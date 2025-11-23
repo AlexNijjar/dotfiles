@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nvf.settings.vim = {
     syntaxHighlighting = true;
     treesitter.context.enable = true;
@@ -40,16 +41,31 @@
       servers = {
         ruff = {
           enable = true;
-          cmd = ["${pkgs.ruff}/bin/ruff" "server"];
-          filetypes = ["python"];
-          root_markers = ["pyproject.toml" "ruff.toml" ".ruff.toml" ".git"];
+          cmd = [
+            "${pkgs.ruff}/bin/ruff"
+            "server"
+          ];
+          filetypes = [ "python" ];
+          root_markers = [
+            "pyproject.toml"
+            "ruff.toml"
+            ".ruff.toml"
+            ".git"
+          ];
         };
 
         ty = {
           enable = true;
-          cmd = ["${pkgs.ty}/bin/ty" "server"];
-          filetypes = ["python"];
-          root_markers = ["ty.toml" "pyproject.toml" ".git"];
+          cmd = [
+            "${pkgs.ty}/bin/ty"
+            "server"
+          ];
+          filetypes = [ "python" ];
+          root_markers = [
+            "ty.toml"
+            "pyproject.toml"
+            ".git"
+          ];
         };
 
         ts_ls = {
@@ -71,7 +87,10 @@
 
         biome = {
           enable = true;
-          cmd = ["${pkgs.biome}/bin/biome" "lsp-proxy"];
+          cmd = [
+            "${pkgs.biome}/bin/biome"
+            "lsp-proxy"
+          ];
           filetypes = [
             "astro"
             "css"
@@ -99,8 +118,15 @@
 
         docker_language_server = {
           enable = true;
-          cmd = ["${pkgs.docker-language-server}/bin/docker-language-server" "start" "--stdio"];
-          filetypes = ["dockerfile" "yaml.docker-compose"];
+          cmd = [
+            "${pkgs.docker-language-server}/bin/docker-language-server"
+            "start"
+            "--stdio"
+          ];
+          filetypes = [
+            "dockerfile"
+            "yaml.docker-compose"
+          ];
           root_markers = [
             "Dockerfile"
             "docker-compose.yaml"
@@ -116,9 +142,16 @@
 
         tombi = {
           enable = true;
-          cmd = ["${pkgs.tombi}/bin/tombi" "lsp"];
-          filetypes = ["toml"];
-          root_markers = ["tombi.toml" "pyproject.toml" ".git"];
+          cmd = [
+            "${pkgs.tombi}/bin/tombi"
+            "lsp"
+          ];
+          filetypes = [ "toml" ];
+          root_markers = [
+            "tombi.toml"
+            "pyproject.toml"
+            ".git"
+          ];
         };
       };
     };
@@ -131,7 +164,7 @@
       bash.enable = true;
       css = {
         enable = true;
-        format.type = "biome";
+        format.type = [ "biome" ];
       };
       html.enable = true;
       java.enable = true;
@@ -143,14 +176,14 @@
       lua.enable = true;
       markdown = {
         enable = true;
-        lsp.servers = ["markdown-oxide"];
+        lsp.servers = [ "markdown-oxide" ];
         extensions.render-markdown-nvim.enable = true;
       };
       nix.enable = true;
       python = {
         enable = true;
         lsp.enable = false; # Using astral-sh/ty LSP
-        format.type = "ruff";
+        format.type = [ "ruff" ];
       };
       rust.enable = true;
       sql = {
@@ -159,7 +192,7 @@
       };
       ts = {
         enable = true;
-        format.type = "biome";
+        format.type = [ "biome" ];
         extraDiagnostics.enable = false; # Not using eslint
       };
       yaml.enable = true;
@@ -170,20 +203,32 @@
       enable = true;
       setupOpts = {
         formatters_by_ft = {
-          javascript = ["biome" "biome-organize-imports"];
-          javascriptreact = ["biome" "biome-organize-imports"];
-          typescript = ["biome" "biome-organize-imports"];
-          typescriptreact = ["biome" "biome-organize-imports"];
-          json = ["biome"];
-          jsonc = ["biome"];
+          javascript = [
+            "biome"
+            "biome-organize-imports"
+          ];
+          javascriptreact = [
+            "biome"
+            "biome-organize-imports"
+          ];
+          typescript = [
+            "biome"
+            "biome-organize-imports"
+          ];
+          typescriptreact = [
+            "biome"
+            "biome-organize-imports"
+          ];
+          json = [ "biome" ];
+          jsonc = [ "biome" ];
 
-          kotlin = ["ktfmt"];
-          dockerfile = ["dockerfmt"];
+          kotlin = [ "ktfmt" ];
+          dockerfile = [ "dockerfmt" ];
         };
         formatters = {
           ktfmt = {
             command = "${pkgs.ktfmt}/bin/ktfmt";
-            args = ["$FILENAME"];
+            args = [ "$FILENAME" ];
             stdin = false;
           };
           dockerfmt = {

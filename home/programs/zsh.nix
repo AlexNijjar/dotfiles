@@ -40,8 +40,24 @@
     plugins = [
       {
         name = "zsh-vi-mode";
-        file = "./share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
         src = pkgs.zsh-vi-mode;
+        file = "share/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+      {
+        name = "nix-zsh-completions";
+        src = pkgs.nix-zsh-completions;
+        file = "share/zsh/plugins/nix/nix-zsh-completions.plugin.zsh";
+        completions = ["share/zsh/site-functions"];
+      }
+      {
+        name = "fast-syntax-highlighting";
+        src = pkgs.zsh-fast-syntax-highlighting;
+        file = "share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh";
+      }
+      {
+        name = "autopair";
+        inherit (pkgs.zsh-autopair) src;
+        file = "zsh-autopair.plugin.zsh";
       }
     ];
   };

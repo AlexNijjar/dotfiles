@@ -89,6 +89,10 @@
       RUSTUP_HOME = "$XDG_DATA_HOME/rustup";
       BUN_INSTALL_CACHE_DIR = "$XDG_CACHE_HOME/bun";
       BUN_RUNTIME_TRANSPILER_CACHE_PATH = "$XDG_CACHE_HOME/bun/transpiler";
+
+      DISABLE_BUG_COMMAND = 1;
+      DISABLE_ERROR_REPORTING = 1;
+      DISABLE_TELEMETRY = 1;
     };
 
     binsh = "${pkgs.dash}/bin/dash";

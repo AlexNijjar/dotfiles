@@ -2,6 +2,7 @@
   imports = [
     ./interface.nix
     ./programs/aerc.nix
+    ./programs/claude-code.nix
     ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/hyprland.nix

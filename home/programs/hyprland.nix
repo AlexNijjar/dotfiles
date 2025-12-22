@@ -24,7 +24,7 @@
       monitor = [", highres, auto, $scale"];
 
       exec-once = [
-        "[workspace 1 silent] vesktop & ghostty -e spotify_player"
+        "[workspace 1 silent] vesktop & ghostty -e spotify"
         "[workspace 2 silent] firefox"
       ];
 

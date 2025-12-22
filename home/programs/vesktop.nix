@@ -1,6 +1,5 @@
-{ inputs, ... }:
-{
-  imports = [ inputs.nixcord.homeModules.nixcord ];
+{inputs, ...}: {
+  imports = [inputs.nixcord.homeModules.nixcord];
   programs.nixcord = {
     enable = true;
     discord.enable = false;
@@ -44,11 +43,11 @@
         showConnections.enable = true;
         showHiddenChannels.enable = true;
         showHiddenThings.enable = true;
-        silentTyping.enable = true;
-        translate = {
+        silentTyping = {
           enable = true;
-          showChatBarButton = false;
+          chatIcon = true;
         };
+        translate.enable = true;
         typingIndicator.enable = true;
         unindent.enable = true;
         unsuppressEmbeds.enable = true;

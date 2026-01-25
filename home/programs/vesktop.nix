@@ -16,7 +16,6 @@
         betterSessions.enable = true;
         callTimer.enable = true;
         copyFileContents.enable = true;
-        copyUserUrLs.enable = true;
         decor.enable = true;
         disableCallIdle.enable = true;
         expressionCloner.enable = true;

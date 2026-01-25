@@ -59,6 +59,11 @@
         inherit (pkgs.zsh-autopair) src;
         file = "zsh-autopair.plugin.zsh";
       }
+      {
+        name = "gradle-completion";
+        src = pkgs.gradle-completion;
+        completions = ["share/zsh/site-functions"];
+      }
     ];
   };
 }

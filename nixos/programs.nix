@@ -13,13 +13,7 @@
     git.enable = true;
     hyprland.enable = true;
     waybar.enable = true;
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
+    thunar.enable = true;
     zsh.enable = true;
   };
 

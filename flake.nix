@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-kotlin-lsp.url = "github:p-louis/nixpkgs/add-kotlin-lsp-package";
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +22,11 @@
     sops-nix.url = "github:Mic92/sops-nix";
     schizofox.url = "github:schizofox/schizofox";
     wallpkgs.url = "github:NotAShelf/wallpkgs";
-    nvf.url = "github:NotAShelf/nvf/v0.8";
+    nvf.url = "github:NotAShelf/nvf";
+    kotlin-nvim = {
+      url = "github:AlexandrosAlexiou/kotlin.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs:
@@ -33,6 +38,11 @@
           {
             nixpkgs = {
               config.allowUnfree = true;
+              overlays = [
+                (final: _: {
+                  kotlin-lsp = nixpkgs-kotlin-lsp.legacyPackages.${final.system}.kotlin-lsp;
+                })
+              ];
             };
           }
           disko.nixosModules.disko

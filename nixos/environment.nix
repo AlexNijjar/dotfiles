@@ -5,7 +5,6 @@
       zip
       unzip
       p7zip
-      rocmPackages.amdsmi
       rocmPackages.rocm-smi
       rocmPackages.rocminfo
       file
@@ -36,7 +35,9 @@
       biome
       prismlauncher
       dua
-      gradle
+      javaPackages.compiler.openjdk25
+      gradle_9
+      typescript-language-server
       socat
       detekt
       blockbench
@@ -50,6 +51,7 @@
       isync
       ssh-to-age
       qbittorrent
+      rsync
     ];
 
     defaultPackages = [];
@@ -57,7 +59,9 @@
     variables = {
       EDITOR = "nvim";
       TERMINAL = "ghostty";
-      LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib:${pkgs.libglvnd}/lib";
+      JAVA_HOME = "${pkgs.javaPackages.compiler.openjdk25}";
+      # KOTLIN_LSP_DIR = "${pkgs.kotlin-lsp}/lib/kotlin-lsp";
+      LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib:${pkgs.libglvnd}/lib:${pkgs.libpulseaudio}/lib:${pkgs.openal}/lib:${pkgs.flite.lib}/lib";
       PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
       OPENSSL_DIR = "${pkgs.openssl.dev}";
       OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
@@ -127,6 +131,9 @@
       nss
       pango
       pipewire
+      openal
+      libpulseaudio
+      flite.lib
       vulkan-loader
       wayland
       xorg.libX11

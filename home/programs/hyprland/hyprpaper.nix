@@ -1,12 +1,15 @@
 {inputs, ...}: {
-  services.hyprpaper = let
-    # Options: https://github.com/NotAShelf/wallpkgs/tree/main/wallpapers/catppuccin
-    wallpaper = "${inputs.wallpkgs}/wallpapers/catppuccin/catppuccin-waterfall.png";
-  in {
+  services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [wallpaper];
-      wallpaper = [", ${wallpaper}"];
+      splash = false;
+      wallpaper = [
+        {
+          monitor = "";
+          # Options: https://github.com/NotAShelf/wallpkgs/tree/main/wallpapers/catppuccin
+          path = "${inputs.wallpkgs}/wallpapers/catppuccin/catppuccin-waterfall.png";
+        }
+      ];
     };
   };
 }

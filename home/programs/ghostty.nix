@@ -7,6 +7,7 @@
       theme = "catppuccin-mocha";
       font-size = 13;
       background-opacity = 0.9;
+      scrollback-limit = 1024 * 1024 * 1024;
       clipboard-paste-protection = false;
       confirm-close-surface = false;
       gtk-tabs-location = "hidden";

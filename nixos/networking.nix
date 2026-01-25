@@ -3,18 +3,29 @@
   pkgs,
   ...
 }: {
-  sops.secrets.wpa_supplicant = {};
+  sops.secrets.wombo_psk = {};
+
+  sops.templates."WOMBO.psk" = {
+    path = "/var/lib/iwd/WOMBO.psk";
+    content = ''
+      [Security]
+      PreSharedKey=${config.sops.placeholder.wombo_psk}
+    '';
+    owner = "root";
+    mode = "0600";
+  };
 
   networking = {
     useDHCP = false;
     useNetworkd = true;
     wireguard.enable = true;
-    wireless = {
+    wireless.iwd = {
       enable = true;
-      secretsFile = config.sops.secrets.wpa_supplicant.path;
-      networks.WOMBO.pskRaw = "ext:wombo_psk";
+      settings = {
+        Settings.AutoConnect = true;
+      };
     };
-    interfaces.wlp11s0 = {
+    interfaces.wlan0 = {
       useDHCP = false;
       wakeOnLan.enable = true;
       ipv4 = {
@@ -34,7 +45,7 @@
     };
     defaultGateway = {
       address = "192.168.0.1";
-      interface = "wlp11s0";
+      interface = "wlan0";
     };
     nameservers = ["1.1.1.1" "8.8.8.8"];
     firewall.allowedTCPPorts = [22];

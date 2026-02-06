@@ -38,8 +38,7 @@
         format = "{}";
         interval = 1;
         exec = pkgs.writeShellScript "recording-status" ''
-          #!/bin/sh
-          if pgrep -x wl-screenrec > /dev/null 2>&1; then
+          if ${pkgs.procps}/bin/pgrep wl-screenrec > /dev/null 2>&1; then
             printf '{"text": "󰑊", "class": "recording", "tooltip": "Recording"}'
           else
             printf '{"text": "", "class": "not-recording"}'

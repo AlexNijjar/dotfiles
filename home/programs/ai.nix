@@ -1,21 +1,22 @@
 let
   customInstructions = ''
-    - ALWAYS CHANGE ONLY WHAT'S ABSOLUTELY NECESSARY TO MAKE CODE WORK; keep code minimal; don't refactor or add features unless explicitly asked
-    - NEVER write new comments/docstrings
-    - never use emojis
-    - never use 'any' types in typescript EVER. if you dont know the type FIND it
-    - no magic strings/numbers
-    - never use shitty variable names like 'a', 'b', 'c', etc
-    - avoid uncommon/confusing acronyms and abbreviations in variable/function names
+    - Always search up the latest documentation when working with libraries/APIs,
+      never make assumptions.
+    - Always use zod for schema validation.
+    - Avoid unnecessary code duplication/redundancy.
+    - When writing backends keep backend routes barebones with business logic in separate service files.
+    - Never use `any` types, always use proper types.
+    - Never use type casts
+    - Never use emojis.
+    - Never write new comments/docstrings.
+    - Only log when necessary.
+    - Avoid magic strings/numbers when applicable.
     - avoid bashisms and always use posix /bin/sh in scripts
     - use rg/fd over grep/find
-    - ALWAYS use zod in TS for any schema or json validation
-    - when writing APIs always separate route logic from business logic and DB logic
-    - always follow formatting and linting rules of the project
+    - Avoid shitty variable names like 'a', 'b' and confusing/non-standard acronyms.
     - dont glaze
   '';
-in
-{
+in {
   programs.claude-code = {
     enable = true;
     settings = {

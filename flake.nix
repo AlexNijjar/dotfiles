@@ -27,6 +27,10 @@
       url = "github:AlexandrosAlexiou/kotlin.nvim";
       flake = false;
     };
+    claude-code = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:
@@ -42,6 +46,7 @@
                 (final: _: {
                   kotlin-lsp = nixpkgs-kotlin-lsp.legacyPackages.${final.system}.kotlin-lsp;
                 })
+                claude-code.overlays.default
               ];
             };
           }

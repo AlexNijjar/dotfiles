@@ -1,25 +1,25 @@
 {
-  wayland.windowManager.hyprland.settings.windowrulev2 = [
-    "suppressevent maximize, class:.*"
+  wayland.windowManager.hyprland.settings.windowrule = [
+    "match:class .*, suppress_event maximize"
 
-    "workspace 1, title:^(vesktop)$"
-    "workspace 1, title:^(spotify)$"
-    "workspace 2, class:^(firefox)$"
+    "match:title ^(vesktop)$, workspace 1"
+    "match:title ^(spotify)$, workspace 1"
+    "match:class ^(firefox)$, workspace 2"
 
-    "opacity 0.9,class:^(spotify)$"
-    "opacity 0.9,class:^(thunar)$"
-    "opacity 0.9,class:^(vesktop)$fullscreen:0"
-    "opacity 0.9,title:^(Lutris)$"
+    "match:class ^(spotify)$, opacity 0.9"
+    "match:class ^(thunar)$, opacity 0.9"
+    "match:class ^(vesktop)$ match:fullscreen 0, opacity 0.9"
+    "match:title ^(Lutris)$, opacity 0.9"
 
-    "float,class:^(imv)$"
-    "float,class:^(mpv)$"
+    "match:class ^(imv)$, float on"
+    "match:class ^(mpv)$, float on"
 
-    "float,title:^(Picture-in-Picture)$"
-    "pin,title:^(Picture-in-Picture)$"
+    "match:title ^(Picture-in-Picture)$, float on"
+    "match:title ^(Picture-in-Picture)$, pin on"
 
-    "float,initialTitle:^(Discord Popout)$"
-    "pin,initialTitle:^(Discord Popout)$"
+    "match:title ^(Discord Popout)$, float on"
+    "match:title ^(Discord Popout)$, pin on"
 
-    "float,title:^(Open Files)$"
+    "match:title ^(Open Files)$, float on"
   ];
 }

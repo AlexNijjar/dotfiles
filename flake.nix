@@ -31,6 +31,7 @@
       url = "github:sadjow/claude-code-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs = inputs:
@@ -47,6 +48,7 @@
                   kotlin-lsp = nixpkgs-kotlin-lsp.legacyPackages.${final.system}.kotlin-lsp;
                 })
                 claude-code.overlays.default
+                nix-cachyos-kernel.overlays.pinned
               ];
             };
           }

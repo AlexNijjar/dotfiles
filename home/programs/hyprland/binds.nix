@@ -14,6 +14,7 @@
         "$mod, P, pin"
         "$mod, escape, exec, walker"
         "$mod, F1, exec, ghostty"
+        "$mod, W, exec, pgrep waybar && pkill -SIGUSR1 waybar || waybar &"
         "$mod, F2, exec, schizofox"
         "$mod, H, movefocus, l"
         "$mod, J, movefocus, d"

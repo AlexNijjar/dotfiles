@@ -21,5 +21,7 @@
     "match:title ^(Discord Popout)$, pin on"
 
     "match:title ^(Open Files)$, float on"
+
+    "match:title ^(Minecraft.*)$, float on"
   ];
 }

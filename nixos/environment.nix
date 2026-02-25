@@ -7,6 +7,7 @@
       p7zip
       rocmPackages.rocm-smi
       rocmPackages.rocminfo
+      rocmPackages.amdsmi
       file
       via
       krabby
@@ -62,6 +63,7 @@
       JAVA_HOME = "${pkgs.javaPackages.compiler.openjdk25}";
       # KOTLIN_LSP_DIR = "${pkgs.kotlin-lsp}/lib/kotlin-lsp";
       LD_LIBRARY_PATH = "${pkgs.vulkan-loader}/lib:${pkgs.libglvnd}/lib:${pkgs.libpulseaudio}/lib:${pkgs.openal}/lib:${pkgs.flite.lib}/lib";
+      NODE_OPTIONS = "--max-old-space-size=8192";
       PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
       OPENSSL_DIR = "${pkgs.openssl.dev}";
       OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
@@ -136,13 +138,13 @@
       flite.lib
       vulkan-loader
       wayland
-      xorg.libX11
-      xorg.libxcb
-      xorg.libXcomposite
-      xorg.libXdamage
-      xorg.libXext
-      xorg.libXfixes
-      xorg.libXrandr
+      libx11
+      libxcb
+      libxcomposite
+      libxdamage
+      libxext
+      libxfixes
+      libxrandr
     ];
   };
 }

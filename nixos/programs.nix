@@ -3,7 +3,6 @@
     ./programs/neovim.nix
     ./programs/spicetify.nix
     ./programs/steam.nix
-    ./programs/sunshine.nix
   ];
   programs = {
     corectrl.enable = true;

@@ -147,8 +147,7 @@
       #custom-gpu,
       #custom-vram,
       #temperature,
-      #disk,
-      #tray {
+      #disk {
         color: @mauve;
         background-color: @surface0;
         padding: 0.5rem;
@@ -158,8 +157,7 @@
       #workspaces,
       #window,
       #clock,
-      #mpris,
-      #tray {
+      #mpris {
         border-radius: 1rem;
       }
 
@@ -222,7 +220,14 @@
       }
 
       #tray {
-        margin-right: 1rem;
+        background-color: @surface0;
+        color: @mauve;
+        border-radius: 1rem;
+        margin: 2px 1rem 2px 0;
+      }
+
+      #tray > * {
+        padding: 0.5rem;
       }
     '';
   };
